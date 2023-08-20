@@ -1,7 +1,7 @@
 export class Stack {
-  array: any[];
-  size: number;
-  top: number;
+  private array: any[];
+  private size: number;
+  private top: number;
 
   constructor(size?: number) {
     if (size !== undefined && size < 0) {
