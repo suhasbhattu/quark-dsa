@@ -1,5 +1,5 @@
 import { describe, expect, test } from "@jest/globals";
-import { Stack } from "../src";
+import { LinkedList, Stack } from "../src";
 import { Queue } from "../src/dataStructures/queue";
 
 describe("Data Structures Module", () => {
@@ -93,5 +93,67 @@ describe("Data Structures Module", () => {
     expect(() => queue.dequeue()).toThrow(
       "Queue is empty, cannot remove an item."
     );
+  });
+  test("Linked List Initialization", () => {
+    const list = new LinkedList([1,2,3,5,4]);
+    expect(list.print()).toBe("1 -> 2 -> 3 -> 5 -> 4");
+    list.add(3);
+    expect(list.getValue(3)).toBe(5);
+    list.update(45, 3);
+    expect(list.getValue(3)).toBe(45);
+    list.remove(5);
+    expect(list.getValue(4)).toBe(4);
+    list.reverse();
+    expect(list.getValue(0)).toBe(4);
+    list.add(34, 6);
+    expect(list.getValue(5)).toBe(34);
+    list.add(12, 2);
+    expect(list.getValue(2)).toBe(12);
+    list.remove();    
+    expect(list.getValue(0)).toBe(45);
+    list.remove(0);
+    expect(list.getValue(0)).toBe(12);
+    list.addFirst(78);
+    expect(list.getValue(0)).toBe(78);
+    list.add(62, 0);
+    expect(list.getValue(0)).toBe(62);
+    list.remove(0);
+    expect(list.getValue(0)).toBe(78);
+    list.remove(5);
+    expect(list.getValue(4)).toBe(1);
+    list.add(65, 5);
+    expect(list.getValue(5)).toBe(65);
+    expect(list.getMiddleValue()).toBe(2);  
+    list.rotateRight(4);
+    expect(list.print()).toBe("3 -> 2 -> 1 -> 65 -> 78 -> 12");
+    list.rotateRight(-4);
+    expect(list.print()).toBe("78 -> 12 -> 3 -> 2 -> 1 -> 65");
+    list.rotateLeft(4);
+    expect(list.print()).toBe("1 -> 65 -> 78 -> 12 -> 3 -> 2");
+    list.rotateLeft(-4);
+    expect(list.print()).toBe("78 -> 12 -> 3 -> 2 -> 1 -> 65");
+    list.rotateLeft(6);
+    expect(list.print()).toBe("78 -> 12 -> 3 -> 2 -> 1 -> 65");
+    list.rotateRight(6);
+    expect(list.print()).toBe("78 -> 12 -> 3 -> 2 -> 1 -> 65");
+    list.rotateRight(11);
+    expect(list.print()).toBe("12 -> 3 -> 2 -> 1 -> 65 -> 78");
+    const list2 = new LinkedList([7,8,9,10]);
+    list.concat(list2);
+    expect(list.print()).toBe("12 -> 3 -> 2 -> 1 -> 65 -> 78 -> 7 -> 8 -> 9 -> 10");
+    const list3 = new LinkedList();
+    list3.concat(list2);
+    expect(list3.print()).toBe("7 -> 8 -> 9 -> 10");
+  });
+  test("Empty Linked List", () => {
+    const list = new LinkedList();
+    expect(list.length()).toBe(0);
+    expect(() => list.remove(-2)).toThrow(
+      "Provided index is not in the range of the linked list !!"
+    );
+    expect(list.print()).toBe("");
+    expect(list.getValue(0)).toBe(null);
+    expect(list.getMiddleNode()).toBe(null);
+    expect(list.getMiddleValue()).toBe(null);
   });
 });

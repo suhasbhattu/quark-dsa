@@ -16,5 +16,30 @@ console.log(isPrime(37019));
 
 ## Highlights
 quark-dsa provides following data startuctures and common operations (more work is going on...):
-- Stack
-- Queue
+- Stack: Basic push, pop, peek, length and serach operations are supported.
+```js
+import { Stack } from "quark-dsa";
+
+const stack = new Stack();
+stack.push(12);
+stack.pop();
+stack.length(); // should return 0;
+```
+- Queue: Basic enqueue, dequeue, length and search operations are suuported.
+```js
+import { Queue } from "quark-dsa";
+
+const queue = new Queue();
+queue.enqueue(3);
+stack.dequeue();
+queue.length(); // should return 0;
+```
+- Linked List: Construct, add node, update node, delete node, reverse, concat, get middle node, rotate operations are supported.
+```js
+import { LinkedList } from "quark-dsa";
+
+const list = new LinkedList([43, 65, 89, 21]);
+list.length(); // should return 3;
+list.remove(1); // deletes node having index 1;
+list.rotateRight(2); // rotates linked list to the right by 2 position;
+```
