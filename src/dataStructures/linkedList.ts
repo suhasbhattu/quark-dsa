@@ -197,12 +197,10 @@ export class LinkedList {
         throw new Error(
           "Provided index is not in the range of the linked list !!"
         );
+      } else if (index === 0) {
+        this.removeFirst();
       } else {
-        if (index === 0) {
-          this.removeFirst();
-        } else {
-          this.removeIndex(index);
-        }
+        this.removeIndex(index);        
       }
     } else {
       this.removeFirst();

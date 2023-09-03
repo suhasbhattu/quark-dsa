@@ -43,3 +43,11 @@ list.length(); // should return 3;
 list.remove(1); // deletes node having index 1;
 list.rotateRight(2); // rotates linked list to the right by 2 position;
 ```
+quark-dsa also provides commonly used algorithms as utility functions.
+- Searching: Linear and Binary search algorithms are added to give position of key in the list.
+```js
+import { LinearSearch, BinarySearch } from "quark-dsa";
+
+LinearSearch([14, 10, 22, 16, 40], 16); // should return 3
+BinarySearch([14, 10, 22, 16, 40], 40); // should return 4
+```

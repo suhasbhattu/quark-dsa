@@ -1,6 +1,5 @@
 import { describe, expect, test } from "@jest/globals";
-import { LinkedList, Stack } from "../src";
-import { Queue } from "../src/dataStructures/queue";
+import { LinkedList, Queue, Stack } from "../src";
 
 describe("Data Structures Module", () => {
   test("Stack Initialization", () => {

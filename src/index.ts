@@ -3,6 +3,7 @@ import { isStringPalindrome, reverseString } from "./dataTypes/string";
 import { Stack } from "./dataStructures/stack";
 import { Queue } from "./dataStructures/queue";
 import { LinkedList } from "./dataStructures/linkedList";
+import { LinearSearch, BinarySearch } from "./algorithms/search";
 
 export {
   isNumberPalindrome,
@@ -13,4 +14,6 @@ export {
   Stack,
   Queue,
   LinkedList,
+  LinearSearch,
+  BinarySearch,
 };
