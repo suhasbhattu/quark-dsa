@@ -4,6 +4,14 @@ import { Stack } from "./dataStructures/stack";
 import { Queue } from "./dataStructures/queue";
 import { LinkedList } from "./dataStructures/linkedList";
 import { LinearSearch, BinarySearch } from "./algorithms/search";
+import {
+  SelectionSort,
+  InsertionSort,
+  BubbleSort,
+  MergeSort,
+  QuickSort,
+  RadixSort,
+} from "./algorithms/sorting";
 
 export {
   isNumberPalindrome,
@@ -16,4 +24,10 @@ export {
   LinkedList,
   LinearSearch,
   BinarySearch,
+  SelectionSort,
+  InsertionSort,
+  BubbleSort,
+  MergeSort,
+  QuickSort,
+  RadixSort,
 };
