@@ -13,6 +13,7 @@
     "type": "git",
     "url": "https://github.com/suhasbhattu/quark-dsa.git"
   },
+  "homepage": "https://quark-dsa-docs.vercel.app/",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.22.10",
