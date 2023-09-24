@@ -4,6 +4,7 @@ import { isStringPalindrome, reverseString } from "./dataTypes/string";
 import { Stack } from "./dataStructures/stack";
 import { Queue } from "./dataStructures/queue";
 import { LinkedList } from "./dataStructures/linkedList";
+import { BinaryTree } from "./dataStructures/tree";
 import { LinearSearch, BinarySearch } from "./algorithms/search";
 import {
   SelectionSort,
@@ -27,6 +28,7 @@ export {
   Stack,
   Queue,
   LinkedList,
+  BinaryTree,
   LinearSearch,
   BinarySearch,
   SelectionSort,

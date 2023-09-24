@@ -1,5 +1,5 @@
 import { describe, expect, test } from "@jest/globals";
-import { LinkedList, Queue, Stack } from "../src";
+import { BinaryTree, LinkedList, Queue, Stack } from "../src";
 
 describe("Data Structures Module", () => {
   test("Stack Initialization", () => {
@@ -94,7 +94,7 @@ describe("Data Structures Module", () => {
     );
   });
   test("Linked List Initialization", () => {
-    const list = new LinkedList([1,2,3,5,4]);
+    const list = new LinkedList([1, 2, 3, 5, 4]);
     expect(list.print()).toBe("1 -> 2 -> 3 -> 5 -> 4");
     list.add(3);
     expect(list.getValue(3)).toBe(5);
@@ -108,7 +108,7 @@ describe("Data Structures Module", () => {
     expect(list.getValue(5)).toBe(34);
     list.add(12, 2);
     expect(list.getValue(2)).toBe(12);
-    list.remove();    
+    list.remove();
     expect(list.getValue(0)).toBe(45);
     list.remove(0);
     expect(list.getValue(0)).toBe(12);
@@ -122,7 +122,7 @@ describe("Data Structures Module", () => {
     expect(list.getValue(4)).toBe(1);
     list.add(65, 5);
     expect(list.getValue(5)).toBe(65);
-    expect(list.getMiddleValue()).toBe(2);  
+    expect(list.getMiddleValue()).toBe(2);
     list.rotateRight(4);
     expect(list.print()).toBe("3 -> 2 -> 1 -> 65 -> 78 -> 12");
     list.rotateRight(-4);
@@ -137,9 +137,11 @@ describe("Data Structures Module", () => {
     expect(list.print()).toBe("78 -> 12 -> 3 -> 2 -> 1 -> 65");
     list.rotateRight(11);
     expect(list.print()).toBe("12 -> 3 -> 2 -> 1 -> 65 -> 78");
-    const list2 = new LinkedList([7,8,9,10]);
+    const list2 = new LinkedList([7, 8, 9, 10]);
     list.concat(list2);
-    expect(list.print()).toBe("12 -> 3 -> 2 -> 1 -> 65 -> 78 -> 7 -> 8 -> 9 -> 10");
+    expect(list.print()).toBe(
+      "12 -> 3 -> 2 -> 1 -> 65 -> 78 -> 7 -> 8 -> 9 -> 10"
+    );
     const list3 = new LinkedList();
     list3.concat(list2);
     expect(list3.print()).toBe("7 -> 8 -> 9 -> 10");
@@ -154,5 +156,62 @@ describe("Data Structures Module", () => {
     expect(list.getValue(0)).toBe(null);
     expect(list.getMiddleNode()).toBe(null);
     expect(list.getMiddleValue()).toBe(null);
+  });
+  test("Binary Tree", () => {
+    const tree = new BinaryTree(5);
+    const root = tree.getRoot();
+    tree.insertNode(3, "L");
+    tree.insertNode(9, "R");
+    tree.insertNode(5, "LR");
+    tree.insertNode(7, "RL");
+    tree.insertNode(6, "RLL");
+    tree.insertNode(8, "RLR");
+    tree.insertNode(12, "RR");
+    tree.insertNode(20, "RRR");
+    expect(() => tree.insertNode(4, "S")).toThrow(
+      "Path should only contains L and R !!"
+    );
+    expect(tree.inorder()).toStrictEqual([3, 5, 5, 6, 7, 8, 9, 12, 20]);
+    expect(tree.preorder()).toStrictEqual([5, 3, 5, 9, 7, 6, 8, 12, 20]);
+    expect(tree.postorder()).toStrictEqual([5, 3, 6, 8, 7, 20, 12, 9, 5]);
+    expect(tree.levelOrder()).toStrictEqual([5, 3, 9, 5, 7, 12, 6, 8, 20]);
+    expect(tree.height()).toBe(4);
+    tree.updateNode(13, "");
+    expect(tree.preorder()).toStrictEqual([13, 3, 5, 9, 7, 6, 8, 12, 20]);
+    tree.updateNode(31, "RLR");
+    expect(tree.preorder()).toStrictEqual([13, 3, 5, 9, 7, 6, 31, 12, 20]);
+    expect(() => tree.updateNode(43, "LL")).toThrow(
+      "No node exists at this path !!"
+    );
+    expect(() => tree.updateNode(43, "LS")).toThrow(
+      "Path should only contains L and R !!"
+    );
+    if (root != null) {
+      expect(tree.nodeHeight(root.getRight())).toBe(3);
+    }
+    tree.deleteNode("RR");
+    expect(tree.inorder()).toStrictEqual([3, 5, 13, 6, 7, 31, 9]);
+    expect(() => tree.deleteNode("S")).toThrow(
+      "Path should only contains L and R !!"
+    );
+    expect(() => tree.deleteNode("SLL")).toThrow(
+      "Path should only contains L and R !!"
+    );
+    tree.deleteNode("RLL");
+    expect(tree.inorder()).toStrictEqual([3, 5, 13, 7, 31, 9]);
+    expect(() => tree.deleteNode("LLLL")).toThrow(
+      "No node exists at this path !!"
+    );
+    tree.invert();
+    expect(tree.inorder()).toStrictEqual([9, 31, 7, 13, 5, 3]);
+    expect(tree.preorder()).toStrictEqual([13, 9, 7, 31, 3, 5]);
+    expect(tree.postorder()).toStrictEqual([31, 7, 9, 5, 3, 13]);
+    tree.deleteNode("");
+    expect(tree.inorder()).toStrictEqual([]);
+    const tree2 = new BinaryTree();
+    tree2.setRootValue(43);
+    expect(tree2.preorder()).toStrictEqual([43]);
+    tree2.insertNode(32, "");
+    expect(tree2.preorder()).toStrictEqual([32]);
   });
 });
