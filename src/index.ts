@@ -5,6 +5,7 @@ import { Stack } from "./dataStructures/stack";
 import { Queue } from "./dataStructures/queue";
 import { LinkedList } from "./dataStructures/linkedList";
 import { BinaryTree } from "./dataStructures/tree";
+import { BinarySearchTree } from "./dataStructures/binarySearchTree";
 import { LinearSearch, BinarySearch } from "./algorithms/search";
 import {
   SelectionSort,
@@ -29,6 +30,7 @@ export {
   Queue,
   LinkedList,
   BinaryTree,
+  BinarySearchTree,
   LinearSearch,
   BinarySearch,
   SelectionSort,

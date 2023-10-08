@@ -28,5 +28,16 @@
     "lib",
     "README.md",
     "package.json"
+  ],
+  "keywords": [
+    "dataStructures",
+    "algorithms",
+    "data structures",
+    "stack",
+    "queue",
+    "linked list",
+    "binary tree",
+    "binary search tree",
+    "bst"
   ]
 }
