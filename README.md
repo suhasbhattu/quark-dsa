@@ -295,3 +295,23 @@ tree.inorder(); // Should return [3, 5, 13, 7, 31, 9].
 tree.invert(); // Construct the invert (mirror) of the tree.
 tree.inorder(); // Shoud return [9, 31, 7, 13, 5, 3].
 ```
+## Search
+Quark-dsa supports Linear Search and Binary Search operations. You can pass the list and search key, it will return the position of the search key in the list.
+### Linear Search
+Linear Search iterates over the list and returns the position of the search key in the list. If the search key is not present in the list, it will return `-1`.
+```js
+import { LinearSearch } from "quark-dsa";
+ 
+const list = [20, 12, 10, 15, 2];
+LinearSearch(list, 15); // returns 3;
+LinearSearch(list, 58); // returns -1;
+```
+### Binary Search
+Binary Search compares the search key with the middle value of the list and then partitions the list depending on the search key will be in the left or right partition. The important pre-requisite for the Binary Search is that the list should be in ascending order, otherwise it will throw an error. If the search key is not present in the list, it will return `-1`.
+```js
+import { BinarySearch } from "quark-dsa";
+ 
+const list = [2, 10, 12, 15, 20];
+BinarySearch(list, 15); // returns 3;
+BinarySearch(list, 58); // returns -1;
+```
