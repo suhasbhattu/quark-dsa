@@ -1,4 +1,15 @@
-import { mean, median, mode, removeDuplicates } from "./dataTypes/list";
+import {
+  mean,
+  median,
+  mode,
+  removeDuplicates,
+  gcd,
+  lcm,
+  matrixAddition,
+  matrixSubtraction,
+  matrixMultiplication,
+  matrixDeterminant,
+} from "./dataTypes/list";
 import { isNumberPalindrome, isPrime, reverseNumber } from "./dataTypes/number";
 import { isStringPalindrome, reverseString } from "./dataTypes/string";
 import { Stack } from "./dataStructures/stack";
@@ -21,6 +32,12 @@ export {
   median,
   mode,
   removeDuplicates,
+  gcd,
+  lcm,
+  matrixAddition,
+  matrixSubtraction,
+  matrixMultiplication,
+  matrixDeterminant,
   isNumberPalindrome,
   isPrime,
   reverseNumber,

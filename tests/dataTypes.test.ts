@@ -9,6 +9,12 @@ import {
   median,
   mode,
   removeDuplicates,
+  gcd,
+  lcm,
+  matrixAddition,
+  matrixSubtraction,
+  matrixMultiplication,
+  matrixDeterminant,
 } from "../src/index";
 
 describe("Data Type Module", () => {
@@ -31,6 +37,130 @@ describe("Data Type Module", () => {
     expect(
       removeDuplicates([1, 2, 3, 3, 2, 1, 4, 5, 1, 5, 8, 3])
     ).toStrictEqual([1, 2, 3, 4, 5, 8]);
+    expect(gcd([8, 12, 16])).toBe(4);
+    expect(gcd([13, 17, 48, 91])).toBe(1);
+    expect(gcd([108, 144])).toBe(36);
+    expect(gcd([])).toBe(0);
+    expect(lcm([12, 18, 24])).toBe(72);
+    expect(lcm([10, 12, 15, 75])).toBe(300);
+    expect(lcm([])).toBe(0);
+    expect(
+      matrixAddition(
+        [
+          [2, 4, 3],
+          [5, 7, 8],
+          [9, 6, 7],
+        ],
+        [
+          [3, 5, 7],
+          [8, 3, 4],
+          [5, 7, 8],
+        ]
+      )
+    ).toStrictEqual([
+      [5, 9, 10],
+      [13, 10, 12],
+      [14, 13, 15],
+    ]);
+    expect(() => {
+      matrixAddition(
+        [
+          [2, 5, 4],
+          [4, 3, 6],
+        ],
+        [
+          [1, 2, 3, 4],
+          [7, 8, 9, 5],
+        ]
+      );
+    }).toThrow("Order of both matrix are not same.");
+    expect(
+      matrixSubtraction(
+        [
+          [2, 4, 3],
+          [5, 7, 8],
+          [9, 6, 7],
+        ],
+        [
+          [3, 5, 7],
+          [8, 3, 4],
+          [5, 7, 8],
+        ]
+      )
+    ).toStrictEqual([
+      [-1, -1, -4],
+      [-3, 4, 4],
+      [4, -1, -1],
+    ]);
+    expect(() => {
+      matrixSubtraction(
+        [
+          [2, 5, 4],
+          [4, 3, 6],
+        ],
+        [
+          [1, 2, 3, 4],
+          [7, 8, 9, 5],
+        ]
+      );
+    }).toThrow("Order of both matrix are not same.");
+    expect(
+      matrixMultiplication(
+        [
+          [1, 2, 3],
+          [4, 5, 6],
+        ],
+        [
+          [7, 8],
+          [9, 10],
+          [11, 12],
+        ]
+      )
+    ).toStrictEqual([
+      [58, 64],
+      [139, 154],
+    ]);
+    expect(matrixMultiplication([[4], [5], [6]], [[1, 2, 3]])).toStrictEqual([
+      [4, 8, 12],
+      [5, 10, 15],
+      [6, 12, 18],
+    ]);
+    expect(() => {
+      matrixMultiplication(
+        [
+          [1, 2],
+          [5, 4],
+        ],
+        [
+          [56, 43, 67],
+          [65, 34, 89],
+          [12, 34, 65],
+        ]
+      );
+    }).toThrow(
+      "Number of columns in first matrix should be same as number of rows in second matrix"
+    );
+    expect(
+      matrixDeterminant([
+        [7, 1, 3],
+        [2, 4, 1],
+        [1, 5, 1],
+      ])
+    ).toBe(10);
+    expect(
+      matrixDeterminant([
+        [4, 3, 2, 2],
+        [0, 1, -3, 3],
+        [0, -1, 3, 3],
+        [0, 3, 1, 1],
+      ])
+    ).toBe(-240);
+    expect(() => {
+      matrixDeterminant([
+        [7, 1, 3],
+        [2, 4, 1],
+      ]);
+    }).toThrow("Determinant of matrix can be defined only for square matrix.");
     expect(
       removeDuplicates([
         "John",

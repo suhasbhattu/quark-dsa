@@ -15,82 +15,99 @@ npm install quark-dsa
 There are several utility functions in quark-dsa, those you can use for performing data structures and operations.
 
 - String: Check if string is palindrome and reverse the string are supported.
-  
-    **Reverse the string**
-    ```js
-    import { reverseString } from "quark-dsa";
-    
-    let str = "quark";
-    reverseString(str); // returns 'krauq'
-    ```
-    **Check a string is palindrome**
-    ```js
-    import { isStringPalindrome } from "quark-dsa";
-    
-    let str = "racecar";
-    isStringPalindrome(str); // returns true;
-    ```
+
+  **Reverse the string**
+
+  ```js
+  import { reverseString } from "quark-dsa";
+
+  let str = "quark";
+  reverseString(str); // returns 'krauq'
+  ```
+
+  **Check a string is palindrome**
+
+  ```js
+  import { isStringPalindrome } from "quark-dsa";
+
+  let str = "racecar";
+  isStringPalindrome(str); // returns true;
+  ```
+
 - Number: Check if number is palindrome, reverse the number and check if number is prime is supported.
 
   **Reverse the number**
+
   ```js
   import { reverseNumber } from "quark-dsa";
-  
+
   let num = 5698;
   reverseNumber(num); // returns 8965
   ```
+
   **Check a number is prime number**
+
   ```js
   import { isPrime } from "quark-dsa";
- 
+
   let num = 37019;
   isPrime(num); // returns true;
   ```
+
   **Check a number is palindrome**
+
   ```js
   import { isNumberPalindrome } from "quark-dsa";
- 
+
   let num = 1562651;
   isNumberPalindrome(num); // returns true;
   ```
+
 - Array: Remove duplicates from an array and calculation of mean, median and mode are supported.
 
   **Mean (Average Calculation)**
   You can calculate the mean of a list. Supported mean types are `arithmetic`, `geometric`, `harmonic` and `rms (root mean square)`. By default `arithmetic` is selected.
+
   ```js
   import { mean } from "quark-dsa";
- 
+
   let list = [2, 6, 4, 5, 8];
   mean(list); // returns 5
   mean(list, "geometric"); // returns 4.54
   mean(list, "harmonic"); // returns 4.03
   mean(list, "rms"); // returns 5.39
   ```
+
   **Median**
   You can calculate middle value of the list, which is median. If list has even number of items, it will return average of middle two values, otherwise it will return middle value. List will get sorted in ascending order before median calculation.
+
   ```js
   import { median } from "quark-dsa";
- 
+
   let list = [4, 12, 14, 17, 22, 23, 23, 24, 25, 29, 40, 67, 77, 82, 92];
   median(list); // returns 24
   let list2 = [142, 140, 130, 150, 160, 135, 158, 132];
   median(list2); // returns 141
   ```
+
   **Mode**
   You can also get the element having highest frequency in the list, which is mode. If the list has only one mode, then it will return as a number. If the list has more than one modes, then it will return all mode values in an array.
+
   ```js
   import { mode } from "quark-dsa";
- 
+
   let list = [3, 3, 6, 9, 16, 16, 16, 27, 27, 37, 48];
   mode(list); // returns 16
   let list2 = [3, 3, 3, 9, 16, 16, 16, 27, 37, 48];
   mode(list2); // returns [3, 16]
   ```
+
   **Remove duplicates**
   You can remove duplicates from a list and returns the same list. Here, in place operation is performed on the list. Only numbers and strings are supported in the list.
+
   ```js
   import { removeDuplicates } from "quark-dsa";
- 
+
   let list = [1, 2, 3, 3, 2, 1, 4, 5, 1, 5, 8, 3];
   removeDuplicates(list); // returns [1, 2, 3, 4, 5, 8];
   let list2 = [
@@ -106,6 +123,46 @@ There are several utility functions in quark-dsa, those you can use for performi
   ];
   removeDuplicates(list2); // returns ["John", "George", "Paul", "Ringo", "Bob","Elvis", "Freddie"]
   ```
+
+  **Greatest Common Divisor (GCD) and Least Common Multiples (LCM) of an array**
+  You can calculate GCD and LCM of an array.
+
+  ```js
+  import { gcd, lcm } from "quark-dsa";
+
+  let list = [8, 12, 16];
+  gcd(list); // returns 4
+  let list2 = [12, 18, 24];
+  lcm(list2); // returns 72
+  ```
+
+  **Matrix Operations**
+  You can also perform matrix operations like addition, subtraction and multiplication on the n\*n arrays.
+
+  ```js
+  import {
+    matrixAddition,
+    matrixSubtraction,
+    matrixMultiplication,
+    matrixDeterminant,
+  } from "quark-dsa";
+
+  let list = [
+    [2, 4, 3],
+    [5, 7, 8],
+    [9, 6, 7],
+  ];
+  let list2 = [
+    [3, 5, 7],
+    [8, 3, 4],
+    [5, 7, 8],
+  ];
+  matrixAddition(list, list2); // returns [[5, 9, 10], [13, 10, 12], [14, 13, 15]]
+  matrixSubtraction(list, list2); // returns [[-1, -1, -4], [-3, 4, 4], [4, -1, -1]]
+  matrixMultiplication(list, list2); // returns [[53, 43, 54], [111, 102, 127], [110, 112, 143]]
+  matrixDeterminant(list); // returns 51
+  ```
+
 ## Highlights
 
 quark-dsa provides following data startuctures and common operations (more work is going on...):
@@ -124,26 +181,33 @@ quark-dsa provides sorting algorithms as utility functions.
 - Sorting: Bubble Sort, Selection Sort, Insertion Sort, Merge Sort, Quick Sort, Radix Sort.
 
 ## Stack
+
 ### Initialize the stack
+
 You can create a stack with the given size. Size is optional argument with the default value 65535.
+
 ```js
 import { Stack } from "quark-dsa";
- 
+
 const stack = new Stack(200); // Creates stack with size 200.
 ```
+
 ### Supported methods
-|Method|Description|Returns|
-|------|-----------|-------|
-|`push(item)`|Pushes the item onto the top of the stack.|void|
-|`pop()`|Removes the item at the top this stack and returns it.|popped item|
-|`isEmpty()`|Checks if the stack is empty|`true` if stack is empty otherwise `false`|
-|`peek()`|Returns the top item from the stack without removing it|top element of the stack|
-|`length()`|Returns the length of the stack. Length is different than size. Size is the maximum limit of the stack, while length is the count of items in the stack.|length of the stack|
-|`search(item)`|Returns the 0-based position of the item in the stack.|returns the position of the item in the stack. If item is absent, it will return `-1`|
+
+| Method         | Description                                                                                                                                              | Returns                                                                               |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `push(item)`   | Pushes the item onto the top of the stack.                                                                                                               | void                                                                                  |
+| `pop()`        | Removes the item at the top this stack and returns it.                                                                                                   | popped item                                                                           |
+| `isEmpty()`    | Checks if the stack is empty                                                                                                                             | `true` if stack is empty otherwise `false`                                            |
+| `peek()`       | Returns the top item from the stack without removing it                                                                                                  | top element of the stack                                                              |
+| `length()`     | Returns the length of the stack. Length is different than size. Size is the maximum limit of the stack, while length is the count of items in the stack. | length of the stack                                                                   |
+| `search(item)` | Returns the 0-based position of the item in the stack.                                                                                                   | returns the position of the item in the stack. If item is absent, it will return `-1` |
+
 ### Usage
+
 ```js
 import { Stack } from "quark-dsa";
- 
+
 const stack = new Stack(); // new stack is created.
 stack.push(23); // pushes 23 to the top of the stack.
 stack.push(36); // pushes 36 to the top of the stack.
@@ -156,29 +220,37 @@ stack.length(); // returns 1;
 stack.pop(); // removes top element from the stack and returns it.
 stack.isEmpty(); // returns true as stack is empty now.
 ```
+
 ## Queue
+
 ### Initialize the queue
+
 You can create a queue with the given size. Size is optional argument with the default value 65535.
+
 ```js
 import { Queue } from "quark-dsa";
- 
+
 const queue = new Queue(200); // Creates queue with size 200.
 ```
+
 ### Supported methods
-|Method|Description|Returns|
-|------|-----------|-------|
-|`enqueue(item)`|Inserts an item at the rear of the queue.|void|
-|`dequeue()`|Removes an item from the front of the queue and returns it.|dequeued item|
-|`getFront()`|Returns the front item of the queue.|front item of the queue|
-|`getRear()`|Returns the rear item of the queue.|rear item of the queue|
-|`isEmpty()`|Checks if the queue is empty|`true` if queue is empty otherwise `false`|
-|`isFull()`|Checks if the queue is full. It will check if length of the queue is equal to its size.|`true` if queue is full otherwise `false`|
-|`length()`|Gets the length of the queue. It is difference between rear and front of the queue.|	length of the queue|
-|`search(item)`|Returns the 0-based position of the item in the queue.|returns the position of the item in the queue. If item is absent, it will return `-1`|
+
+| Method          | Description                                                                             | Returns                                                                               |
+| --------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `enqueue(item)` | Inserts an item at the rear of the queue.                                               | void                                                                                  |
+| `dequeue()`     | Removes an item from the front of the queue and returns it.                             | dequeued item                                                                         |
+| `getFront()`    | Returns the front item of the queue.                                                    | front item of the queue                                                               |
+| `getRear()`     | Returns the rear item of the queue.                                                     | rear item of the queue                                                                |
+| `isEmpty()`     | Checks if the queue is empty                                                            | `true` if queue is empty otherwise `false`                                            |
+| `isFull()`      | Checks if the queue is full. It will check if length of the queue is equal to its size. | `true` if queue is full otherwise `false`                                             |
+| `length()`      | Gets the length of the queue. It is difference between rear and front of the queue.     | length of the queue                                                                   |
+| `search(item)`  | Returns the 0-based position of the item in the queue.                                  | returns the position of the item in the queue. If item is absent, it will return `-1` |
+
 ### Usage
+
 ```js
 import { Queue } from "quark-dsa";
- 
+
 const queue = new Queue(); // new queue is created.
 queue.enqueue(3); // inserts 3 to the rear of the queue.
 queue.enqueue(8); // inserts 8 to the rear of the queue.
@@ -194,40 +266,48 @@ queue.dequeue(); // removes the front item of the queue and then returns it.
 queue.length(); // returns 0;
 queue.isEmpty(); // returns true as queue is empty now.
 ```
+
 ## Linked List
+
 ### Initialize the linked list
+
 You can create an empty linked list or you can pass an array which will convert an array to an linked list.
+
 ```js
 import { LinkedList } from "quark-dsa";
- 
+
 const list = new LinkedList(); // returns an empty linked list.
- 
+
 or;
- 
+
 const list = new LinkedList([17, 2, 96, 55, 40]); // returns a linked list with array elements inserted sequentially.
 ```
+
 ### Supported methods
-|Method|Description|Returns|
-|------|-----------|-------|
-|`constructListFromArray(itemsList)`|Constructs a linked list from an array|returns the head of the linked list|
-|`reverse()`|Reverse the linked list.|eturns the head of the reversed linked list|
-|`length()`|Calculates the length of the linked list.|returns the node count of the linked list|
-|`addFirst(value)`|Adds node to the first position of the linked list.|returns the head of the linked list|
-|`addLast(value)`|	Adds node to the last position of the linked list.|returns the head of the linked list|
-|`add(value, index)`|Adds node to the given index of the linked list. If index is not given, it will insert node at last.|returns the head of the linked list|
-|`remove(index)`|Removes the node at given index of the linked list. If index is not given, it will remove node at first.|returns the head of the linked list|
-|`getValue(index)`|Returns the value of the node at the given index.|returns value of the node|
-|`update(value, index)`|Updates the value of the node at the given index.|returns the head of the linked list|
-|`print()`|Returns the value of the node separated by `->`|returns the linked list in string format|
-|`getMiddleNode()`|Returns the middle node of the linked list.|returns the middle node|
-|`getMiddleValue()`|Returns the value of the middle node of the linked list.|returns the value of the middle node|
-|`rotateRight(position)`|Rotates the linked list to right by position times. If position is negative, it will rotate the linked list towards left.|returns the head of the rotated list|
-|`rotateLeft(position)`|Rotates the linked list to left by position times. If position is negative, it will rotate the linked list towards right.|returns the head of the rotated list|
-|`concat(list)`|Concatenates the second linked list into first one and return the first linked list.|returns the head of the first linked list|
+
+| Method                              | Description                                                                                                               | Returns                                     |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- |
+| `constructListFromArray(itemsList)` | Constructs a linked list from an array                                                                                    | returns the head of the linked list         |
+| `reverse()`                         | Reverse the linked list.                                                                                                  | eturns the head of the reversed linked list |
+| `length()`                          | Calculates the length of the linked list.                                                                                 | returns the node count of the linked list   |
+| `addFirst(value)`                   | Adds node to the first position of the linked list.                                                                       | returns the head of the linked list         |
+| `addLast(value)`                    | Adds node to the last position of the linked list.                                                                        | returns the head of the linked list         |
+| `add(value, index)`                 | Adds node to the given index of the linked list. If index is not given, it will insert node at last.                      | returns the head of the linked list         |
+| `remove(index)`                     | Removes the node at given index of the linked list. If index is not given, it will remove node at first.                  | returns the head of the linked list         |
+| `getValue(index)`                   | Returns the value of the node at the given index.                                                                         | returns value of the node                   |
+| `update(value, index)`              | Updates the value of the node at the given index.                                                                         | returns the head of the linked list         |
+| `print()`                           | Returns the value of the node separated by `->`                                                                           | returns the linked list in string format    |
+| `getMiddleNode()`                   | Returns the middle node of the linked list.                                                                               | returns the middle node                     |
+| `getMiddleValue()`                  | Returns the value of the middle node of the linked list.                                                                  | returns the value of the middle node        |
+| `rotateRight(position)`             | Rotates the linked list to right by position times. If position is negative, it will rotate the linked list towards left. | returns the head of the rotated list        |
+| `rotateLeft(position)`              | Rotates the linked list to left by position times. If position is negative, it will rotate the linked list towards right. | returns the head of the rotated list        |
+| `concat(list)`                      | Concatenates the second linked list into first one and return the first linked list.                                      | returns the head of the first linked list   |
+
 ### Usage
+
 ```js
 import { LinkedList } from "quark-dsa";
- 
+
 const list = new LinkedList([17, 2, 96, 55, 40]); // returns a linked list with array elements inserted sequentially.
 list.print(); // returns the value in the console log "17 -> 2 -> 96 -> 55 -> 40".
 list.add(3); // inserts 3 at last of the linked list.
@@ -237,39 +317,48 @@ list.reverse(); // reverse the list.
 list.getMiddleValue(); // returns the middle value of the list, 96.
 list.rotateRight(4); // rotates the list to 4 positions towards right.
 list.rotateLeft(5); // rotates the list to 5 positions towards left.
- 
+
 const list2 = new LinkedList([89, 21, 63, 45]); // returns a linked list with array elements inserted sequentially.
 list.concat(list2); // returns list with concatenated values of list2.
 ```
+
 ## Binary Tree
+
 ### Initialize the binary tree
+
 You can create a tree with the root value. If the root value is not given, an empty node is created and set as a root of the tree.
+
 ```js
 import { BinaryTree } from "quark-dsa";
- 
+
 const tree = new BinaryTree(5); // The binary tree with root value as 5 is created.
 const tree2 = new BinaryTree(); // The binary tree is created with root value set as null.
 ```
+
 For performing operations on a node in the tree, we need to provide the path of the node. Path of the node should be in the format of `L` and `R`. For example, path `LRRL` means node of having path Left -> Right -> Right -> Left from the root node. Any characters other than `L` and `R` with throw an error.
+
 ### Supported methods
-|Method|Description|Returns|
-|------|-----------|-------|
-|`getRoot()`|Gets the root of the tree.|Root node of the tree.|
-|`setRootValue(value)`|	Sets the given value to the root node.|void|
-|`insertNode(value, path)`|nserts the value to the given path starting from the root. If the path is an empty string, then it will insert value as a root. Path should be in the form of `L` and `R`. Any characters other than these will throw an error.|Root of the tree|
-|`inorder()`|Performs the inorder traversal on the tree.|List of all node values in inorder manner.|
-|`preorder()`|Performs the preorder traversal on the tree.|List of all node values in preorder manner.|
-|`postorder()`|Performs the postorder traversal on the tree.|List of all node values in postorder manner.|
-|`levelOrder()`|Performs the level order traversal (breadth first search) on the tree.|List of all node values in level order manner.|
-|`height()`|Calculates the height of the tree. Height is the number of edges in the tree from root to the deepest node.|Height of the tree|
-|`nodeHeight()`|	Calculates the height of the given node.|Height of the node|
-|`invert()`|Constructs the invert (mirror image) of the given tree.|The root of the inverted tree|
-|`updateNode(value, path)`|Updates the node value of a given path. If the path is an empty string, then it will update the root node value. Path should be in the form of `L` and `R`. Any characters other than these will throw an error.|Root of the tree|
-|`deleteNode(path)`|Deletes the node of a given path. This will delete node and also its children. Path should be in the form of `L` and `R`. Any characters other than these will throw an error.|Root of the tree|
+
+| Method                    | Description                                                                                                                                                                                                                     | Returns                                        |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| `getRoot()`               | Gets the root of the tree.                                                                                                                                                                                                      | Root node of the tree.                         |
+| `setRootValue(value)`     | Sets the given value to the root node.                                                                                                                                                                                          | void                                           |
+| `insertNode(value, path)` | nserts the value to the given path starting from the root. If the path is an empty string, then it will insert value as a root. Path should be in the form of `L` and `R`. Any characters other than these will throw an error. | Root of the tree                               |
+| `inorder()`               | Performs the inorder traversal on the tree.                                                                                                                                                                                     | List of all node values in inorder manner.     |
+| `preorder()`              | Performs the preorder traversal on the tree.                                                                                                                                                                                    | List of all node values in preorder manner.    |
+| `postorder()`             | Performs the postorder traversal on the tree.                                                                                                                                                                                   | List of all node values in postorder manner.   |
+| `levelOrder()`            | Performs the level order traversal (breadth first search) on the tree.                                                                                                                                                          | List of all node values in level order manner. |
+| `height()`                | Calculates the height of the tree. Height is the number of edges in the tree from root to the deepest node.                                                                                                                     | Height of the tree                             |
+| `nodeHeight()`            | Calculates the height of the given node.                                                                                                                                                                                        | Height of the node                             |
+| `invert()`                | Constructs the invert (mirror image) of the given tree.                                                                                                                                                                         | The root of the inverted tree                  |
+| `updateNode(value, path)` | Updates the node value of a given path. If the path is an empty string, then it will update the root node value. Path should be in the form of `L` and `R`. Any characters other than these will throw an error.                | Root of the tree                               |
+| `deleteNode(path)`        | Deletes the node of a given path. This will delete node and also its children. Path should be in the form of `L` and `R`. Any characters other than these will throw an error.                                                  | Root of the tree                               |
+
 ### Usage
+
 ```js
 import { BinaryTree } from "quark-dsa";
- 
+
 const tree = new BinaryTree(5); // Constructs a tree with 5 as a root node value.
 tree.insertNode(3, "L"); // Inserts a node with value 3 on left of root.
 tree.insertNode(9, "R"); // Inserts a node with value 9 on right of root.
@@ -295,22 +384,30 @@ tree.inorder(); // Should return [3, 5, 13, 7, 31, 9].
 tree.invert(); // Construct the invert (mirror) of the tree.
 tree.inorder(); // Shoud return [9, 31, 7, 13, 5, 3].
 ```
+
 ## Search
+
 Quark-dsa supports Linear Search and Binary Search operations. You can pass the list and search key, it will return the position of the search key in the list.
+
 ### Linear Search
+
 Linear Search iterates over the list and returns the position of the search key in the list. If the search key is not present in the list, it will return `-1`.
+
 ```js
 import { LinearSearch } from "quark-dsa";
- 
+
 const list = [20, 12, 10, 15, 2];
 LinearSearch(list, 15); // returns 3;
 LinearSearch(list, 58); // returns -1;
 ```
+
 ### Binary Search
+
 Binary Search compares the search key with the middle value of the list and then partitions the list depending on the search key will be in the left or right partition. The important pre-requisite for the Binary Search is that the list should be in ascending order, otherwise it will throw an error. If the search key is not present in the list, it will return `-1`.
+
 ```js
 import { BinarySearch } from "quark-dsa";
- 
+
 const list = [2, 10, 12, 15, 20];
 BinarySearch(list, 15); // returns 3;
 BinarySearch(list, 58); // returns -1;
