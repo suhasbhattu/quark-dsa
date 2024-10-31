@@ -67,7 +67,7 @@ export class Queue {
   search(item: any): number {
     let position = -1;
     let i = Math.min(this.front, this.rear);
-    let j = Math.max(this.front, this.rear);
+    const j = Math.max(this.front, this.rear);
     while (i <= j) {
       if (this.array[i] === item) {
         position = i;

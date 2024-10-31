@@ -16,7 +16,7 @@ import {
   isStringPalindrome,
   reverseString,
   sortString,
-  getWords
+  getWords,
 } from "./dataTypes/string";
 import { Stack } from "./dataStructures/stack";
 import { Queue } from "./dataStructures/queue";

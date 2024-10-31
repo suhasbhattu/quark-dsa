@@ -29,12 +29,12 @@ describe("Data Structures Module", () => {
     stack.push(10);
     stack.push(25);
     expect(() => stack.push(26)).toThrow(
-      "Stack is full, cannot be pushed new items."
+      "Stack is full, cannot be pushed new items.",
     );
     stack.pop();
     stack.pop();
     expect(() => stack.pop()).toThrow(
-      "Stack is empty, no items can be popped."
+      "Stack is empty, no items can be popped.",
     );
   });
   test("Queue Initialization", () => {
@@ -84,13 +84,13 @@ describe("Data Structures Module", () => {
     queue.enqueue(89);
     queue.enqueue(43);
     expect(() => queue.enqueue(54)).toThrow(
-      "Queue is full, cannot add new item."
+      "Queue is full, cannot add new item.",
     );
     queue.dequeue();
     queue.dequeue();
     queue.dequeue();
     expect(() => queue.dequeue()).toThrow(
-      "Queue is empty, cannot remove an item."
+      "Queue is empty, cannot remove an item.",
     );
   });
   test("Linked List Initialization", () => {
@@ -140,7 +140,7 @@ describe("Data Structures Module", () => {
     const list2 = new LinkedList([7, 8, 9, 10]);
     list.concat(list2);
     expect(list.print()).toBe(
-      "12 -> 3 -> 2 -> 1 -> 65 -> 78 -> 7 -> 8 -> 9 -> 10"
+      "12 -> 3 -> 2 -> 1 -> 65 -> 78 -> 7 -> 8 -> 9 -> 10",
     );
     const list3 = new LinkedList();
     list3.concat(list2);
@@ -150,7 +150,7 @@ describe("Data Structures Module", () => {
     const list = new LinkedList();
     expect(list.length()).toBe(0);
     expect(() => list.remove(-2)).toThrow(
-      "Provided index is not in the range of the linked list !!"
+      "Provided index is not in the range of the linked list !!",
     );
     expect(list.print()).toBe("");
     expect(list.getValue(0)).toBe(null);
@@ -169,7 +169,7 @@ describe("Data Structures Module", () => {
     tree.insertNode(12, "RR");
     tree.insertNode(20, "RRR");
     expect(() => tree.insertNode(4, "S")).toThrow(
-      "Path should only contains L and R !!"
+      "Path should only contains L and R !!",
     );
     expect(tree.inorder()).toStrictEqual([3, 5, 5, 6, 7, 8, 9, 12, 20]);
     expect(tree.preorder()).toStrictEqual([5, 3, 5, 9, 7, 6, 8, 12, 20]);
@@ -181,10 +181,10 @@ describe("Data Structures Module", () => {
     tree.updateNode(31, "RLR");
     expect(tree.preorder()).toStrictEqual([13, 3, 5, 9, 7, 6, 31, 12, 20]);
     expect(() => tree.updateNode(43, "LL")).toThrow(
-      "No node exists at this path !!"
+      "No node exists at this path !!",
     );
     expect(() => tree.updateNode(43, "LS")).toThrow(
-      "Path should only contains L and R !!"
+      "Path should only contains L and R !!",
     );
     if (root != null) {
       expect(tree.nodeHeight(root.getRight())).toBe(3);
@@ -192,15 +192,15 @@ describe("Data Structures Module", () => {
     tree.deleteNode("RR");
     expect(tree.inorder()).toStrictEqual([3, 5, 13, 6, 7, 31, 9]);
     expect(() => tree.deleteNode("S")).toThrow(
-      "Path should only contains L and R !!"
+      "Path should only contains L and R !!",
     );
     expect(() => tree.deleteNode("SLL")).toThrow(
-      "Path should only contains L and R !!"
+      "Path should only contains L and R !!",
     );
     tree.deleteNode("RLL");
     expect(tree.inorder()).toStrictEqual([3, 5, 13, 7, 31, 9]);
     expect(() => tree.deleteNode("LLLL")).toThrow(
-      "No node exists at this path !!"
+      "No node exists at this path !!",
     );
     tree.invert();
     expect(tree.inorder()).toStrictEqual([9, 31, 7, 13, 5, 3]);

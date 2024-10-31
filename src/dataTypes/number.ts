@@ -1,16 +1,16 @@
 /**
  * Reverse the given number
- * @param number 
+ * @param number
  * @returns the reversed number
  */
 export const reverseNumber = (number: number): number => {
   let reverse = 0;
-  let isNegative = number < 0;
+  const isNegative = number < 0;
   if (isNegative) {
     number *= -1;
   }
   while (number !== 0) {
-    let remainder = number % 10;
+    const remainder = number % 10;
     reverse = reverse * 10 + remainder;
     number = Math.floor(number / 10);
   }
@@ -22,7 +22,7 @@ export const reverseNumber = (number: number): number => {
 
 /**
  * Check if number is prime.
- * @param number 
+ * @param number
  * @returns true if number is prime, otherwise false.
  */
 
@@ -31,7 +31,7 @@ export const isPrime = (number: number): boolean => {
     return false;
   }
 
-  let primeFlag = true;
+  const primeFlag = true;
   let i = 2;
 
   while (i * i <= number) {
@@ -45,7 +45,7 @@ export const isPrime = (number: number): boolean => {
 
 /**
  * Check if number is palindrome.
- * @param number 
+ * @param number
  * @returns true if number is palindrome, otherwise false.
  */
 export const isNumberPalindrome = (number: number): boolean => {

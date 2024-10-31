@@ -47,7 +47,7 @@ There are several utility functions in quark-dsa, those you can use for performi
 
   ```js
   import { getWords } from "quark-dsa";
-  
+
   let str = "Lorem ipsum dolor sit amet, consectetur adipiscing elit";
   getWords(str); //returns ["Lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit"]
   ```

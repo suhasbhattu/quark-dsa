@@ -177,7 +177,7 @@ export class LinkedList {
         currentIndex++;
       }
       if (current?.getNext() !== null) {
-        let next = current !== null ? current.getNext() : null;
+        const next = current !== null ? current.getNext() : null;
         if (next !== null) {
           current?.setNext(next?.getNext());
         }
@@ -195,12 +195,12 @@ export class LinkedList {
     if (index != null) {
       if (index < 0 || index > this.length()) {
         throw new Error(
-          "Provided index is not in the range of the linked list !!"
+          "Provided index is not in the range of the linked list !!",
         );
       } else if (index === 0) {
         this.removeFirst();
       } else {
-        this.removeIndex(index);        
+        this.removeIndex(index);
       }
     } else {
       this.removeFirst();
@@ -270,7 +270,7 @@ export class LinkedList {
       while (fast?.getNext()) {
         slow = slow !== null ? slow.getNext() : slow;
         if (fast.getNext() !== null) {
-          let next = fast.getNext();
+          const next = fast.getNext();
           if (next !== null) {
             fast = next.getNext();
           }
@@ -288,7 +288,7 @@ export class LinkedList {
 
   getMiddleValue(): any {
     if (this.head !== null) {
-      let node = this.getMiddleNode();
+      const node = this.getMiddleNode();
       return node?.getValue();
     }
     return null;
@@ -301,7 +301,7 @@ export class LinkedList {
       current = current ? current.getNext() : null;
       currentIndex++;
     }
-    let newHead: LinkedListNode | null =
+    const newHead: LinkedListNode | null =
       current != null ? current?.getNext() : null;
     current?.setNext(null);
     current = newHead;
@@ -321,8 +321,8 @@ export class LinkedList {
 
   rotateRight(pos?: number): LinkedListNode | null {
     if (this.head !== null) {
-      let length = this.length();
-      let position = pos != null ? pos % length : 1;
+      const length = this.length();
+      const position = pos != null ? pos % length : 1;
       if (position === 0) {
         return this.head;
       } else if (position < 0) {
@@ -342,8 +342,8 @@ export class LinkedList {
 
   rotateLeft(pos?: number): LinkedListNode | null {
     if (this.head !== null) {
-      let length = this.length();
-      let position = pos != null ? pos % length : 1;
+      const length = this.length();
+      const position = pos != null ? pos % length : 1;
       if (position === 0) {
         return this.head;
       } else if (position < 0) {

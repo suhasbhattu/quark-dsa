@@ -13,7 +13,7 @@ const compareStrings = (s1: string, s2: string) => {
 };
 
 const compareArrays = (arr1: any[], arr2: any[]) => {
-  let result = true;
+  const result = true;
   if (arr1.length !== arr2.length) {
     return false;
   } else {

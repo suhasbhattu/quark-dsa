@@ -1,7 +1,7 @@
 import { compare } from "./compare";
 
 export const isSorted = (list: any[]): boolean => {
-  let length = list.length;
+  const length = list.length;
   if (length === 0 || length === 1) {
     return true;
   }

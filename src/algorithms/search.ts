@@ -29,11 +29,11 @@ export const LinearSearch = (list: any[], key: any): number => {
 export const BinarySearch = (list: any[], key: any): number => {
   if (isSorted(list)) {
     let position = -1;
-    let length = list.length;
+    const length = list.length;
     let start = 0;
     let end = length - 1;
     while (start <= end) {
-      let mid = Math.floor(start + (end - start) / 2);
+      const mid = Math.floor(start + (end - start) / 2);
       if (compare(list[mid], key) === 0) {
         position = mid;
         break;
@@ -46,7 +46,7 @@ export const BinarySearch = (list: any[], key: any): number => {
     return position;
   } else {
     throw new Error(
-      "List is not sorted, so Binary Search cannot be performed!!"
+      "List is not sorted, so Binary Search cannot be performed!!",
     );
   }
 };

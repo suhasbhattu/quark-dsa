@@ -47,7 +47,7 @@ export const sortString = (string: string, descending?: boolean): string => {
 
 /**
  * Returns the list of words in the given sentence or string.
- * @param string 
+ * @param string
  * @returns List of words.
  */
 export const getWords = (string: string): string[] => {

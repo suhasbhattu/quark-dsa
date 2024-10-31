@@ -49,8 +49,8 @@ export const mean = (list: number[], type?: MeanType): number => {
 export const median = (list: number[]): number => {
   MergeSort(list);
   let medianValue = 0;
-  let length = list.length;
-  let midValue = Math.floor(length / 2);
+  const length = list.length;
+  const midValue = Math.floor(length / 2);
   if (length % 2 === 0) {
     medianValue = mean([list[midValue - 1], list[midValue]]);
   } else {
@@ -79,7 +79,7 @@ export const mode = (list: number[]): number | number[] => {
   const sortedFreq = keys
     .map((key) => [key, freq[key]])
     .sort((a, b) => b[1] - a[1]);
-  let max = sortedFreq[0];
+    const max = sortedFreq[0];
   modeValue = sortedFreq.filter((a) => a[1] === max[1]);
   return modeValue.length === 1
     ? Number(modeValue[0][0])
@@ -93,7 +93,7 @@ export const mode = (list: number[]): number | number[] => {
  */
 
 export const removeDuplicates = (
-  list: (number | string)[]
+  list: (number | string)[],
 ): (number | string)[] => {
   const freq: any = {};
   let i = 0,
@@ -116,11 +116,11 @@ interface histogramMap {
 }
 /**
  * Returns the histogram map for each item occurrence in a given list.
- * @param list 
+ * @param list
  * @returns Histogram map for a given list.
  */
 export const histogram = (list: (number | string)[]): histogramMap => {
-  let map: histogramMap = {};
+  const map: histogramMap = {};
   for (const item of list) {
     if (map[item]) {
       map[item]++;
@@ -143,7 +143,7 @@ export const gcd = (list: number[]): number => {
   }
   const recursiveGcd = (i: number, j: number) => {
     while (j !== 0) {
-      let temp = j;
+      const temp = j;
       j = i % j;
       i = temp;
     }
@@ -182,7 +182,7 @@ export const lcm = (list: number[]): number => {
 
 export const matrixAddition = (
   matrix1: number[][],
-  matrix2: number[][]
+  matrix2: number[][],
 ): number[][] => {
   const m1 = matrix1.length,
     n1 = matrix1[0].length;
@@ -211,7 +211,7 @@ export const matrixAddition = (
 
 export const matrixSubtraction = (
   matrix1: number[][],
-  matrix2: number[][]
+  matrix2: number[][],
 ): number[][] => {
   const m1 = matrix1.length,
     n1 = matrix1[0].length;
@@ -240,7 +240,7 @@ export const matrixSubtraction = (
 
 export const matrixMultiplication = (
   matrix1: number[][],
-  matrix2: number[][]
+  matrix2: number[][],
 ): number[][] => {
   const m1 = matrix1.length,
     n1 = matrix1[0].length;
@@ -261,7 +261,7 @@ export const matrixMultiplication = (
     return result;
   } else {
     throw new Error(
-      "Number of columns in first matrix should be same as number of rows in second matrix"
+      "Number of columns in first matrix should be same as number of rows in second matrix",
     );
   }
 };
@@ -272,12 +272,12 @@ export const matrixMultiplication = (
  * @returns determinant of matrix.
  */
 export const matrixDeterminant = (matrix: number[][]) => {
-  let m = matrix.length,
+  const m = matrix.length,
     n = matrix[0].length;
   if (m === n) {
     const determinant = (mat: number[][], k: number) => {
       let det = 0;
-      let subMatrix = new Array(k);
+      const subMatrix = new Array(k);
       for (let index = 0; index < subMatrix.length; index++) {
         subMatrix[index] = [];
       }
@@ -307,7 +307,7 @@ export const matrixDeterminant = (matrix: number[][]) => {
     return determinant(matrix, n);
   } else {
     throw new Error(
-      "Determinant of matrix can be defined only for square matrix."
+      "Determinant of matrix can be defined only for square matrix.",
     );
   }
 };

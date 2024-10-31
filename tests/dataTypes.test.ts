@@ -32,13 +32,13 @@ describe("Data Type Module", () => {
     expect(mean([6, 5, 4, 2, 7], "rms")).toBe(5.1);
     expect(mean([2, 3, 5, 7, 11], "rms")).toBe(6.45);
     expect(
-      median([4, 12, 14, 17, 22, 23, 23, 24, 25, 29, 40, 67, 77, 82, 92])
+      median([4, 12, 14, 17, 22, 23, 23, 24, 25, 29, 40, 67, 77, 82, 92]),
     ).toBe(24);
     expect(median([142, 140, 130, 150, 160, 135, 158, 132])).toBe(141);
     expect(mode([3, 3, 6, 9, 16, 16, 16, 27, 27, 37, 48])).toBe(16);
     expect(mode([3, 3, 3, 9, 16, 16, 16, 27, 37, 48])).toStrictEqual([3, 16]);
     expect(
-      removeDuplicates([1, 2, 3, 3, 2, 1, 4, 5, 1, 5, 8, 3])
+      removeDuplicates([1, 2, 3, 3, 2, 1, 4, 5, 1, 5, 8, 3]),
     ).toStrictEqual([1, 2, 3, 4, 5, 8]);
     expect(histogram([3, 3, 3, 9, 16, 16, 16, 27, 37, 48])).toStrictEqual({
       "3": 3,
@@ -66,8 +66,8 @@ describe("Data Type Module", () => {
           [3, 5, 7],
           [8, 3, 4],
           [5, 7, 8],
-        ]
-      )
+        ],
+      ),
     ).toStrictEqual([
       [5, 9, 10],
       [13, 10, 12],
@@ -82,7 +82,7 @@ describe("Data Type Module", () => {
         [
           [1, 2, 3, 4],
           [7, 8, 9, 5],
-        ]
+        ],
       );
     }).toThrow("Order of both matrix are not same.");
     expect(
@@ -96,8 +96,8 @@ describe("Data Type Module", () => {
           [3, 5, 7],
           [8, 3, 4],
           [5, 7, 8],
-        ]
-      )
+        ],
+      ),
     ).toStrictEqual([
       [-1, -1, -4],
       [-3, 4, 4],
@@ -112,7 +112,7 @@ describe("Data Type Module", () => {
         [
           [1, 2, 3, 4],
           [7, 8, 9, 5],
-        ]
+        ],
       );
     }).toThrow("Order of both matrix are not same.");
     expect(
@@ -125,8 +125,8 @@ describe("Data Type Module", () => {
           [7, 8],
           [9, 10],
           [11, 12],
-        ]
-      )
+        ],
+      ),
     ).toStrictEqual([
       [58, 64],
       [139, 154],
@@ -146,17 +146,17 @@ describe("Data Type Module", () => {
           [56, 43, 67],
           [65, 34, 89],
           [12, 34, 65],
-        ]
+        ],
       );
     }).toThrow(
-      "Number of columns in first matrix should be same as number of rows in second matrix"
+      "Number of columns in first matrix should be same as number of rows in second matrix",
     );
     expect(
       matrixDeterminant([
         [7, 1, 3],
         [2, 4, 1],
         [1, 5, 1],
-      ])
+      ]),
     ).toBe(10);
     expect(
       matrixDeterminant([
@@ -164,7 +164,7 @@ describe("Data Type Module", () => {
         [0, 1, -3, 3],
         [0, -1, 3, 3],
         [0, 3, 1, 1],
-      ])
+      ]),
     ).toBe(-240);
     expect(() => {
       matrixDeterminant([
@@ -182,7 +182,7 @@ describe("Data Type Module", () => {
         "Bob",
         "Elvis",
         "Freddie",
-      ])
+      ]),
     ).toStrictEqual([
       "John",
       "George",
@@ -196,7 +196,7 @@ describe("Data Type Module", () => {
   test("Reverse String", () => {
     expect(reverseString("noon")).toBe("noon");
     expect(reverseString("This statement is false.")).toBe(
-      ".eslaf si tnemetats sihT"
+      ".eslaf si tnemetats sihT",
     );
     expect(reverseString("mississippi")).toBe("ippississim");
   });
@@ -217,7 +217,7 @@ describe("Data Type Module", () => {
     expect(getWords("")).toStrictEqual([]);
     expect(getWords("///>>??")).toStrictEqual([]);
     expect(
-      getWords("Lorem ipsum dolor sit amet, consectetur adipiscing elit")
+      getWords("Lorem ipsum dolor sit amet, consectetur adipiscing elit"),
     ).toStrictEqual([
       "Lorem",
       "ipsum",
@@ -230,8 +230,8 @@ describe("Data Type Module", () => {
     ]);
     expect(
       getWords(
-        "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune"
-      )
+        "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune",
+      ),
     ).toStrictEqual([
       "To",
       "be",
