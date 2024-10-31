@@ -16,10 +16,6 @@ class TreeNode {
     return this.value;
   }
 
-  setValue(value: any) {
-    this.value = value;
-  }
-
   getLeft() {
     return this.left;
   }

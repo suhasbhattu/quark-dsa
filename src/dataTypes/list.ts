@@ -111,6 +111,26 @@ export const removeDuplicates = (
   return list;
 };
 
+interface histogramMap {
+  [key: string | number]: number;
+}
+/**
+ * Returns the histogram map for each item occurrence in a given list.
+ * @param list 
+ * @returns Histogram map for a given list.
+ */
+export const histogram = (list: (number | string)[]): histogramMap => {
+  let map: histogramMap = {};
+  for (const item of list) {
+    if (map[item]) {
+      map[item]++;
+    } else {
+      map[item] = 1;
+    }
+  }
+  return map;
+};
+
 /**
  * This will calculate the Greatest Common Divisor (GCD) of the list and return it.
  * @param list List of numbers

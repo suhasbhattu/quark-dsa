@@ -5,16 +5,19 @@ import {
   reverseNumber,
   isStringPalindrome,
   reverseString,
+  sortString,
   mean,
   median,
   mode,
   removeDuplicates,
+  histogram,
   gcd,
   lcm,
   matrixAddition,
   matrixSubtraction,
   matrixMultiplication,
   matrixDeterminant,
+  getWords,
 } from "../src/index";
 
 describe("Data Type Module", () => {
@@ -37,6 +40,14 @@ describe("Data Type Module", () => {
     expect(
       removeDuplicates([1, 2, 3, 3, 2, 1, 4, 5, 1, 5, 8, 3])
     ).toStrictEqual([1, 2, 3, 4, 5, 8]);
+    expect(histogram([3, 3, 3, 9, 16, 16, 16, 27, 37, 48])).toStrictEqual({
+      "3": 3,
+      "9": 1,
+      "16": 3,
+      "27": 1,
+      "37": 1,
+      "48": 1,
+    });
     expect(gcd([8, 12, 16])).toBe(4);
     expect(gcd([13, 17, 48, 91])).toBe(1);
     expect(gcd([108, 144])).toBe(36);
@@ -194,6 +205,60 @@ describe("Data Type Module", () => {
     expect(isStringPalindrome("noon")).toBe(true);
     expect(isStringPalindrome("mississippi")).toBe(false);
     expect(isStringPalindrome("racecar")).toBe(true);
+  });
+
+  test("Sort String", () => {
+    expect(sortString("mississippi")).toBe("iiiimppssss");
+    expect(sortString("structure", true)).toBe("uuttsrrec");
+    expect(sortString("vision-2040")).toBe("-0024iinosv");
+  });
+
+  test("Get Words", () => {
+    expect(getWords("")).toStrictEqual([]);
+    expect(getWords("///>>??")).toStrictEqual([]);
+    expect(
+      getWords("Lorem ipsum dolor sit amet, consectetur adipiscing elit")
+    ).toStrictEqual([
+      "Lorem",
+      "ipsum",
+      "dolor",
+      "sit",
+      "amet",
+      "consectetur",
+      "adipiscing",
+      "elit",
+    ]);
+    expect(
+      getWords(
+        "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune"
+      )
+    ).toStrictEqual([
+      "To",
+      "be",
+      "or",
+      "not",
+      "to",
+      "be",
+      "that",
+      "is",
+      "the",
+      "question",
+      "Whether",
+      "tis",
+      "nobler",
+      "in",
+      "the",
+      "mind",
+      "to",
+      "suffer",
+      "The",
+      "slings",
+      "and",
+      "arrows",
+      "of",
+      "outrageous",
+      "fortune",
+    ]);
   });
 
   test("Reverse Number", () => {
