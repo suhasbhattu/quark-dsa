@@ -27,13 +27,16 @@ describe("Algorithms Module", () => {
     expect(compare([2, 1, 4, 5, 6], [])).toBe(false);
     expect(compare([[2, 1, 4], 5, 6], [2, 1, [4, 5, 6]])).toBe(false);
     expect(
-      compare([true, { name: "Sam" }], [true, { elements: { id: "321-er43" } }])
+      compare(
+        [true, { name: "Sam" }],
+        [true, { elements: { id: "321-er43" } }],
+      ),
     ).toBe(false);
     expect(
       compare(
         { name: "Sam", age: 78, result: true, regions: ["LB", "IO", "PD"] },
-        { name: "Sam", age: 78, result: true, regions: ["LB", "IO", "PD"] }
-      )
+        { name: "Sam", age: 78, result: true, regions: ["LB", "IO", "PD"] },
+      ),
     ).toBe(true);
     expect(
       compare(
@@ -44,8 +47,8 @@ describe("Algorithms Module", () => {
           result: true,
           regions: ["LB", "IO", "PD"],
           elements: { id: "321-er43", key: "key1" },
-        }
-      )
+        },
+      ),
     ).toBe(false);
   });
   test("Search Algorithms", () => {
@@ -55,7 +58,7 @@ describe("Algorithms Module", () => {
     expect(BinarySearch([1, 2, 3, 4, 5, 6], 6)).toBe(5);
     expect(BinarySearch([1, 2, 3, 4, 5, 6], 8)).toBe(-1);
     expect(() =>
-      BinarySearch(["John", "Paul", "George", "Ringo"], "George")
+      BinarySearch(["John", "Paul", "George", "Ringo"], "George"),
     ).toThrow("List is not sorted, so Binary Search cannot be performed!!");
     expect(BinarySearch(["George", "john", "Paul", "ringo"], "George")).toBe(0);
     expect(BinarySearch([], 34)).toBe(-1);
@@ -71,7 +74,7 @@ describe("Algorithms Module", () => {
       ],
     };
     expect(JSON.stringify(clone(object))).toBe(
-      '{"members":[{"name":"John","age":40},{"name":"Paul","age":50},{"name":"George","age":70},{"name":"Ringo","age":80}]}'
+      '{"members":[{"name":"John","age":40},{"name":"Paul","age":50},{"name":"George","age":70},{"name":"Ringo","age":80}]}',
     );
     expect(clone(list).toString()).toBe("20,12,10,15,2");
   });

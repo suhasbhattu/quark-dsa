@@ -1,0 +1,3 @@
+npm test
+eslint . --fix
+prettier --write .

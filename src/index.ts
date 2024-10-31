@@ -3,6 +3,7 @@ import {
   median,
   mode,
   removeDuplicates,
+  histogram,
   gcd,
   lcm,
   matrixAddition,
@@ -11,7 +12,12 @@ import {
   matrixDeterminant,
 } from "./dataTypes/list";
 import { isNumberPalindrome, isPrime, reverseNumber } from "./dataTypes/number";
-import { isStringPalindrome, reverseString } from "./dataTypes/string";
+import {
+  isStringPalindrome,
+  reverseString,
+  sortString,
+  getWords,
+} from "./dataTypes/string";
 import { Stack } from "./dataStructures/stack";
 import { Queue } from "./dataStructures/queue";
 import { LinkedList } from "./dataStructures/linkedList";
@@ -41,8 +47,11 @@ export {
   isNumberPalindrome,
   isPrime,
   reverseNumber,
+  histogram,
   isStringPalindrome,
   reverseString,
+  sortString,
+  getWords,
   Stack,
   Queue,
   LinkedList,

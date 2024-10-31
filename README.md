@@ -34,6 +34,24 @@ There are several utility functions in quark-dsa, those you can use for performi
   isStringPalindrome(str); // returns true;
   ```
 
+  **Sort the string**
+
+  ```js
+  import { sortString } from "quark-dsa";
+
+  let str = "mississippi";
+  sortString(str); //returns iiiimppssss
+  ```
+
+  **Words list in the sentence**
+
+  ```js
+  import { getWords } from "quark-dsa";
+
+  let str = "Lorem ipsum dolor sit amet, consectetur adipiscing elit";
+  getWords(str); //returns ["Lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit"]
+  ```
+
 - Number: Check if number is palindrome, reverse the number and check if number is prime is supported.
 
   **Reverse the number**
@@ -122,6 +140,16 @@ There are several utility functions in quark-dsa, those you can use for performi
     "Paul",
   ];
   removeDuplicates(list2); // returns ["John", "George", "Paul", "Ringo", "Bob","Elvis", "Freddie"]
+  ```
+
+  **Histogram**
+  You can get the object of occurence of all items in the list.
+
+  ```js
+  import { histogram } from "quark-dsa";
+
+  let list = [3, 3, 3, 9, 16, 16, 16, 27, 37, 48];
+  histogram(list); // returns {"3": 3, "9": 1, "16": 3, "27": 1, "37": 1, "48": 1}
   ```
 
   **Greatest Common Divisor (GCD) and Least Common Multiples (LCM) of an array**

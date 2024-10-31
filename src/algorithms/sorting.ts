@@ -7,7 +7,7 @@ import { swap } from "./utils/sort";
  * @param descending Sorting order, by default is ascending
  */
 export const BubbleSort = (list: any[], descending?: boolean) => {
-  let length = list.length;
+  const length = list.length;
   for (let index = 0; index < length - 1; index++) {
     for (let j = 0; j < length - index - 1; j++) {
       const comparison =
@@ -29,7 +29,7 @@ export const BubbleSort = (list: any[], descending?: boolean) => {
  * @param descending Sorting order, by default is ascending
  */
 export const SelectionSort = (list: any[], descending?: boolean) => {
-  let length = list.length;
+  const length = list.length;
   for (let step = 0; step < length - 1; step++) {
     let minIndex = step;
     for (let index = step + 1; index < length; index++) {
@@ -53,9 +53,9 @@ export const SelectionSort = (list: any[], descending?: boolean) => {
  * @param descending Sorting order, by default is ascending
  */
 export const InsertionSort = (list: any[], descending?: boolean) => {
-  let length = list.length;
+  const length = list.length;
   for (let step = 1; step < length; step++) {
-    let key = list[step];
+    const key = list[step];
     let j = step - 1;
     while (
       j >= 0 && descending != null && descending === true
@@ -74,12 +74,12 @@ const merge = (
   p: number,
   q: number,
   r: number,
-  descending?: boolean
+  descending?: boolean,
 ) => {
-  let n1 = q - p + 1;
-  let n2 = r - q;
-  let left = new Array(n1);
-  let right = new Array(n2);
+  const n1 = q - p + 1;
+  const n2 = r - q;
+  const left = new Array(n1);
+  const right = new Array(n2);
 
   for (let index = 0; index < n1; index++) {
     left[index] = list[p + index];
@@ -124,10 +124,10 @@ const mergeSortFunction = (
   list: any[],
   left: number,
   right: number,
-  descending?: boolean
+  descending?: boolean,
 ) => {
   if (left < right) {
-    let mid = Math.floor(left + (right - left) / 2);
+    const mid = Math.floor(left + (right - left) / 2);
     mergeSortFunction(list, left, mid, descending);
     mergeSortFunction(list, mid + 1, right, descending);
     merge(list, left, mid, right, descending);
@@ -147,9 +147,9 @@ const partition = (
   list: any[],
   low: number,
   high: number,
-  descending?: boolean
+  descending?: boolean,
 ) => {
-  let pivot = list[high];
+  const pivot = list[high];
   let i = low - 1;
   for (let index = low; index < high; index++) {
     const comparison =
@@ -174,10 +174,10 @@ const quickSortFunction = (
   list: any[],
   low: number,
   high: number,
-  descending?: boolean
+  descending?: boolean,
 ) => {
   if (low < high) {
-    let partitionIndex = partition(list, low, high, descending);
+    const partitionIndex = partition(list, low, high, descending);
     quickSortFunction(list, low, partitionIndex - 1, descending);
     quickSortFunction(list, partitionIndex + 1, high, descending);
   }
@@ -196,12 +196,12 @@ const countingSort = (
   list: number[],
   length: number,
   place: number,
-  descending?: boolean
+  descending?: boolean,
 ) => {
   const output = new Array(length);
   const count = new Array(10).fill(0);
   for (let index = 0; index < length; index++) {
-    let x =
+    const x =
       descending != null && descending === true
         ? 9 - (Math.floor(list[index] / place) % 10)
         : Math.floor(list[index] / place) % 10;
@@ -211,7 +211,7 @@ const countingSort = (
     count[index] += count[index - 1];
   }
   for (let index = length - 1; index >= 0; index--) {
-    let x =
+    const x =
       descending != null && descending === true
         ? 9 - (Math.floor(list[index] / place) % 10)
         : Math.floor(list[index] / place) % 10;
