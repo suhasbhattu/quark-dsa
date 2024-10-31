@@ -79,7 +79,7 @@ export const mode = (list: number[]): number | number[] => {
   const sortedFreq = keys
     .map((key) => [key, freq[key]])
     .sort((a, b) => b[1] - a[1]);
-    const max = sortedFreq[0];
+  const max = sortedFreq[0];
   modeValue = sortedFreq.filter((a) => a[1] === max[1]);
   return modeValue.length === 1
     ? Number(modeValue[0][0])
