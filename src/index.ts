@@ -2,6 +2,8 @@ import {
   mean,
   median,
   mode,
+  variance,
+  standardDeviation,
   removeDuplicates,
   histogram,
   gcd,
@@ -11,7 +13,14 @@ import {
   matrixMultiplication,
   matrixDeterminant,
 } from "./dataTypes/list";
-import { isNumberPalindrome, isPrime, reverseNumber } from "./dataTypes/number";
+import {
+  isNumberPalindrome,
+  isPrime,
+  reverseNumber,
+  factorial,
+  permutations,
+  combinations,
+} from "./dataTypes/number";
 import {
   isStringPalindrome,
   reverseString,
@@ -37,6 +46,8 @@ export {
   mean,
   median,
   mode,
+  variance,
+  standardDeviation,
   removeDuplicates,
   gcd,
   lcm,
@@ -47,6 +58,9 @@ export {
   isNumberPalindrome,
   isPrime,
   reverseNumber,
+  factorial,
+  permutations,
+  combinations,
   histogram,
   isStringPalindrome,
   reverseString,

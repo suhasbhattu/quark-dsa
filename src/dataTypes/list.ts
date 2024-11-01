@@ -87,13 +87,34 @@ export const mode = (list: number[]): number | number[] => {
 };
 
 /**
+ * Calculate the variance of the list.
+ * @param list
+ * @returns Returns the variance.
+ */
+export const variance = (list: number[]): number => {
+  const listMean = mean(list);
+  const squares = list.map((item) => (item - listMean) * (item - listMean));
+  const sum = squares.reduce((prev, curr) => prev + curr, 0);
+  return Math.round((sum / (list.length - 1)) * 100) / 100;
+};
+
+/**
+ * Calculate the standard deviation of the list.
+ * @param list
+ * @returns Standard deviation of the list.
+ */
+export const standardDeviation = (list: number[]): number => {
+  return Math.round(Math.sqrt(variance(list)) * 100) / 100;
+};
+
+/**
  * This will remove duplicates from the passed argument list and return the same list.
  * @param list List of numbers or strings
  * @returns same list with duplicates removed
  */
 
 export const removeDuplicates = (
-  list: (number | string)[],
+  list: (number | string)[]
 ): (number | string)[] => {
   const freq: any = {};
   let i = 0,
@@ -182,7 +203,7 @@ export const lcm = (list: number[]): number => {
 
 export const matrixAddition = (
   matrix1: number[][],
-  matrix2: number[][],
+  matrix2: number[][]
 ): number[][] => {
   const m1 = matrix1.length,
     n1 = matrix1[0].length;
@@ -211,7 +232,7 @@ export const matrixAddition = (
 
 export const matrixSubtraction = (
   matrix1: number[][],
-  matrix2: number[][],
+  matrix2: number[][]
 ): number[][] => {
   const m1 = matrix1.length,
     n1 = matrix1[0].length;
@@ -240,7 +261,7 @@ export const matrixSubtraction = (
 
 export const matrixMultiplication = (
   matrix1: number[][],
-  matrix2: number[][],
+  matrix2: number[][]
 ): number[][] => {
   const m1 = matrix1.length,
     n1 = matrix1[0].length;
@@ -261,7 +282,7 @@ export const matrixMultiplication = (
     return result;
   } else {
     throw new Error(
-      "Number of columns in first matrix should be same as number of rows in second matrix",
+      "Number of columns in first matrix should be same as number of rows in second matrix"
     );
   }
 };
@@ -307,7 +328,7 @@ export const matrixDeterminant = (matrix: number[][]) => {
     return determinant(matrix, n);
   } else {
     throw new Error(
-      "Determinant of matrix can be defined only for square matrix.",
+      "Determinant of matrix can be defined only for square matrix."
     );
   }
 };

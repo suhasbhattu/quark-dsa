@@ -81,9 +81,41 @@ There are several utility functions in quark-dsa, those you can use for performi
   isNumberPalindrome(num); // returns true;
   ```
 
+  **Factorial of a number**
+
+  ```js
+  import { factorial } from "quark-dsa";
+
+  factorial(5); // returns 120;
+  factorial(15); // returns 1307674368000
+  ```
+
+  **Permutations of the list**
+
+  You can get number of possibilities of selecting k entities out of set of n entities.
+
+  ```js
+  import { permutations } from "quark-dsa";
+
+  permutations(5, 2); //returns 20
+  permutations(12, 2); // returns 132
+  ```
+
+  **Combinations of the list**
+
+  You can get number of arrangements of k entities out of set of n entities.
+
+  ```js
+  import { combinations } from "quark-dsa";
+
+  combinations(5, 2); //returns 10
+  combinations(12, 2); // returns 66
+  ```
+
 - Array: Remove duplicates from an array and calculation of mean, median and mode are supported.
 
   **Mean (Average Calculation)**
+
   You can calculate the mean of a list. Supported mean types are `arithmetic`, `geometric`, `harmonic` and `rms (root mean square)`. By default `arithmetic` is selected.
 
   ```js
@@ -97,6 +129,7 @@ There are several utility functions in quark-dsa, those you can use for performi
   ```
 
   **Median**
+
   You can calculate middle value of the list, which is median. If list has even number of items, it will return average of middle two values, otherwise it will return middle value. List will get sorted in ascending order before median calculation.
 
   ```js
@@ -109,6 +142,7 @@ There are several utility functions in quark-dsa, those you can use for performi
   ```
 
   **Mode**
+
   You can also get the element having highest frequency in the list, which is mode. If the list has only one mode, then it will return as a number. If the list has more than one modes, then it will return all mode values in an array.
 
   ```js
@@ -120,7 +154,23 @@ There are several utility functions in quark-dsa, those you can use for performi
   mode(list2); // returns [3, 16]
   ```
 
+  **Variance and Standard Variation**
+
+  You can also calculate Variance and Standard Variation of the list.
+
+  ```js
+  import { variance, standardDeviation } from "quark-dsa";
+
+  let list = [46, 69, 32, 60, 52, 41];
+  variance(list); // returns 177.2
+  standardDeviation(list); // returns 13.31
+  let list2 = [4, 2, 5, 8, 6];
+  variance(list2); // returns 5
+  standardDeviation(list2); // returns 2.24
+  ```
+
   **Remove duplicates**
+
   You can remove duplicates from a list and returns the same list. Here, in place operation is performed on the list. Only numbers and strings are supported in the list.
 
   ```js
@@ -143,6 +193,7 @@ There are several utility functions in quark-dsa, those you can use for performi
   ```
 
   **Histogram**
+
   You can get the object of occurence of all items in the list.
 
   ```js

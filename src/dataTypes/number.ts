@@ -55,3 +55,45 @@ export const isNumberPalindrome = (number: number): boolean => {
   const reverse = reverseNumber(number);
   return number === reverse;
 };
+
+/**
+ * Calculate factorial of the given number.
+ * @param number
+ * @returns Factorial of the number.
+ */
+export const factorial = (number: number): number => {
+  if (number < 0) {
+    throw new Error("Factorial of negative number cannot be defined.");
+  }
+  if (number === 0) {
+    return 1;
+  } else {
+    return number * factorial(number - 1);
+  }
+};
+
+/**
+ * Calculate permutations of selecting k entities from a set of n entities.
+ * @param n Total number of entities
+ * @param k Number of entities you want to select.
+ * @returns The number of possible selections.
+ */
+export const permutations = (n: number, k: number): number => {
+  if (k > n) {
+    throw new Error(`You cannot select ${k} entities from a set of ${n}!!`);
+  }
+  return factorial(n) / factorial(n - k);
+};
+
+/**
+ * Calculate combinations of arrangements of k entities from a set of n entities.
+ * @param n Total number of entities.
+ * @param k Number of entities you want to arrange.
+ * @returns The number of possible arrangements.
+ */
+export const combinations = (n: number, k: number): number => {
+  if (k > n) {
+    throw new Error(`You cannot arrange ${k} entities from a set of ${n}!!`);
+  }
+  return factorial(n) / (factorial(k) * factorial(n - k));
+};
