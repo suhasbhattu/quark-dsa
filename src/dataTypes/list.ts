@@ -87,6 +87,27 @@ export const mode = (list: number[]): number | number[] => {
 };
 
 /**
+ * Calculate the variance of the list.
+ * @param list
+ * @returns Returns the variance.
+ */
+export const variance = (list: number[]): number => {
+  const listMean = mean(list);
+  const squares = list.map((item) => (item - listMean) * (item - listMean));
+  const sum = squares.reduce((prev, curr) => prev + curr, 0);
+  return Math.round((sum / (list.length - 1)) * 100) / 100;
+};
+
+/**
+ * Calculate the standard deviation of the list.
+ * @param list
+ * @returns Standard deviation of the list.
+ */
+export const standardDeviation = (list: number[]): number => {
+  return Math.round(Math.sqrt(variance(list)) * 100) / 100;
+};
+
+/**
  * This will remove duplicates from the passed argument list and return the same list.
  * @param list List of numbers or strings
  * @returns same list with duplicates removed

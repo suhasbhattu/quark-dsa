@@ -3,12 +3,17 @@ import {
   isNumberPalindrome,
   isPrime,
   reverseNumber,
+  factorial,
+  permutations,
+  combinations,
   isStringPalindrome,
   reverseString,
   sortString,
   mean,
   median,
   mode,
+  variance,
+  standardDeviation,
   removeDuplicates,
   histogram,
   gcd,
@@ -37,6 +42,10 @@ describe("Data Type Module", () => {
     expect(median([142, 140, 130, 150, 160, 135, 158, 132])).toBe(141);
     expect(mode([3, 3, 6, 9, 16, 16, 16, 27, 27, 37, 48])).toBe(16);
     expect(mode([3, 3, 3, 9, 16, 16, 16, 27, 37, 48])).toStrictEqual([3, 16]);
+    expect(variance([46, 69, 32, 60, 52, 41])).toBe(177.2);
+    expect(variance([4, 2, 5, 8, 6])).toBe(5);
+    expect(standardDeviation([46, 69, 32, 60, 52, 41])).toBe(13.31);
+    expect(standardDeviation([4, 2, 5, 8, 6])).toBe(2.24);
     expect(
       removeDuplicates([1, 2, 3, 3, 2, 1, 4, 5, 1, 5, 8, 3]),
     ).toStrictEqual([1, 2, 3, 4, 5, 8]);
@@ -278,5 +287,29 @@ describe("Data Type Module", () => {
     expect(isNumberPalindrome(56965)).toBe(true);
     expect(isNumberPalindrome(-9889)).toBe(false);
     expect(isNumberPalindrome(853691196358)).toBe(true);
+  });
+
+  test("Number Factorial", () => {
+    expect(factorial(5)).toBe(120);
+    expect(factorial(15)).toBe(1307674368000);
+    expect(() => factorial(-2)).toThrow(
+      "Factorial of negative number cannot be defined.",
+    );
+  });
+
+  test("Permutations", () => {
+    expect(permutations(5, 2)).toBe(20);
+    expect(permutations(12, 2)).toBe(132);
+    expect(() => permutations(5, 8)).toThrow(
+      "You cannot select 8 entities from a set of 5!!",
+    );
+  });
+
+  test("Combinations", () => {
+    expect(combinations(5, 2)).toBe(10);
+    expect(combinations(12, 2)).toBe(66);
+    expect(() => combinations(5, 8)).toThrow(
+      "You cannot arrange 8 entities from a set of 5!!",
+    );
   });
 });
