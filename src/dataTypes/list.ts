@@ -114,7 +114,7 @@ export const standardDeviation = (list: number[]): number => {
  */
 
 export const removeDuplicates = (
-  list: (number | string)[]
+  list: (number | string)[],
 ): (number | string)[] => {
   const freq: any = {};
   let i = 0,
@@ -203,7 +203,7 @@ export const lcm = (list: number[]): number => {
 
 export const matrixAddition = (
   matrix1: number[][],
-  matrix2: number[][]
+  matrix2: number[][],
 ): number[][] => {
   const m1 = matrix1.length,
     n1 = matrix1[0].length;
@@ -232,7 +232,7 @@ export const matrixAddition = (
 
 export const matrixSubtraction = (
   matrix1: number[][],
-  matrix2: number[][]
+  matrix2: number[][],
 ): number[][] => {
   const m1 = matrix1.length,
     n1 = matrix1[0].length;
@@ -261,7 +261,7 @@ export const matrixSubtraction = (
 
 export const matrixMultiplication = (
   matrix1: number[][],
-  matrix2: number[][]
+  matrix2: number[][],
 ): number[][] => {
   const m1 = matrix1.length,
     n1 = matrix1[0].length;
@@ -282,7 +282,7 @@ export const matrixMultiplication = (
     return result;
   } else {
     throw new Error(
-      "Number of columns in first matrix should be same as number of rows in second matrix"
+      "Number of columns in first matrix should be same as number of rows in second matrix",
     );
   }
 };
@@ -328,7 +328,7 @@ export const matrixDeterminant = (matrix: number[][]) => {
     return determinant(matrix, n);
   } else {
     throw new Error(
-      "Determinant of matrix can be defined only for square matrix."
+      "Determinant of matrix can be defined only for square matrix.",
     );
   }
 };
@@ -339,13 +339,13 @@ export const matrixDeterminant = (matrix: number[][]) => {
  * @returns The list of all subsets
  */
 export const getSubsets = (
-  list: (string | number)[]
+  list: (string | number)[],
 ): (string | number)[][] => {
   const calculateSubsets = (
     list: (string | number)[],
     result: (number | string)[][],
     subset: (number | string)[],
-    index: number
+    index: number,
   ) => {
     result.push([...subset]);
     for (let i = index; i < list.length; i++) {

@@ -420,20 +420,20 @@ For performing operations on a node in the tree, we need to provide the path of 
 
 ### Supported methods
 
-| Method                    | Description                                                                                                                                                                                                                     | Returns                                        |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
-| `getRoot()`               | Gets the root of the tree.                                                                                                                                                                                                      | Root node of the tree.                         |
-| `setRootValue(value)`     | Sets the given value to the root node.                                                                                                                                                                                          | void                                           |
+| Method                    | Description                                                                                                                                                                                                                      | Returns                                        |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| `getRoot()`               | Gets the root of the tree.                                                                                                                                                                                                       | Root node of the tree.                         |
+| `setRootValue(value)`     | Sets the given value to the root node.                                                                                                                                                                                           | void                                           |
 | `insertNode(value, path)` | Inserts the value to the given path starting from the root. If the path is an empty string, then it will insert value as a root. Path should be in the form of `L` and `R`. Any characters other than these will throw an error. | Root of the tree                               |
-| `inorder()`               | Performs the inorder traversal on the tree.                                                                                                                                                                                     | List of all node values in inorder manner.     |
-| `preorder()`              | Performs the preorder traversal on the tree.                                                                                                                                                                                    | List of all node values in preorder manner.    |
-| `postorder()`             | Performs the postorder traversal on the tree.                                                                                                                                                                                   | List of all node values in postorder manner.   |
-| `levelOrder()`            | Performs the level order traversal (breadth first search) on the tree.                                                                                                                                                          | List of all node values in level order manner. |
-| `height()`                | Calculates the height of the tree. Height is the number of edges in the tree from root to the deepest node.                                                                                                                     | Height of the tree                             |
-| `nodeHeight()`            | Calculates the height of the given node.                                                                                                                                                                                        | Height of the node                             |
-| `invert()`                | Constructs the invert (mirror image) of the given tree.                                                                                                                                                                         | The root of the inverted tree                  |
-| `updateNode(value, path)` | Updates the node value of a given path. If the path is an empty string, then it will update the root node value. Path should be in the form of `L` and `R`. Any characters other than these will throw an error.                | Root of the tree                               |
-| `deleteNode(path)`        | Deletes the node of a given path. This will delete node and also its children. Path should be in the form of `L` and `R`. Any characters other than these will throw an error.                                                  | Root of the tree                               |
+| `inorder()`               | Performs the inorder traversal on the tree.                                                                                                                                                                                      | List of all node values in inorder manner.     |
+| `preorder()`              | Performs the preorder traversal on the tree.                                                                                                                                                                                     | List of all node values in preorder manner.    |
+| `postorder()`             | Performs the postorder traversal on the tree.                                                                                                                                                                                    | List of all node values in postorder manner.   |
+| `levelOrder()`            | Performs the level order traversal (breadth first search) on the tree.                                                                                                                                                           | List of all node values in level order manner. |
+| `height()`                | Calculates the height of the tree. Height is the number of edges in the tree from root to the deepest node.                                                                                                                      | Height of the tree                             |
+| `nodeHeight()`            | Calculates the height of the given node.                                                                                                                                                                                         | Height of the node                             |
+| `invert()`                | Constructs the invert (mirror image) of the given tree.                                                                                                                                                                          | The root of the inverted tree                  |
+| `updateNode(value, path)` | Updates the node value of a given path. If the path is an empty string, then it will update the root node value. Path should be in the form of `L` and `R`. Any characters other than these will throw an error.                 | Root of the tree                               |
+| `deleteNode(path)`        | Deletes the node of a given path. This will delete node and also its children. Path should be in the form of `L` and `R`. Any characters other than these will throw an error.                                                   | Root of the tree                               |
 
 ### Usage
 
@@ -482,16 +482,16 @@ tree.insert(15); // It will insert node with value 15 in the tree.
 
 ### Supported methods
 
-| Method                    | Description                                                                                                                                                                                                                     | Returns                                        |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
-| `getRoot()`               | Gets the root of the tree.                                                                                                                                                                                                      | Root node of the tree.                         |
-| `insert(value)` | Inserts the node with the given value in the binary search tree. | Inserted node of the tree                               |
-| `inorder()`               | Performs the inorder traversal on the tree.                                                                                                                                                                                     | List of all node values in inorder manner.     |
-| `preorder()`              | Performs the preorder traversal on the tree.                                                                                                                                                                                    | List of all node values in preorder manner.    |
-| `postorder()`             | Performs the postorder traversal on the tree.                                                                                                                                                                                   | List of all node values in postorder manner.   |
-| `levelOrder()`            | Performs the level order traversal (breadth first search) on the tree.                                                                                                                                                          | List of all node values in level order manner. |
-| `height()`                | Calculates the height of the tree. Height is the number of edges in the tree from root to the deepest node.                                                                                                                     | Height of the tree                             |
-| `nodeHeight()`            | Calculates the height of the given node.                                                                                                                                                                                        | Height of the node                             |                          |
+| Method          | Description                                                                                                 | Returns                                        |
+| --------------- | ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------- | --- |
+| `getRoot()`     | Gets the root of the tree.                                                                                  | Root node of the tree.                         |
+| `insert(value)` | Inserts the node with the given value in the binary search tree.                                            | Inserted node of the tree                      |
+| `inorder()`     | Performs the inorder traversal on the tree.                                                                 | List of all node values in inorder manner.     |
+| `preorder()`    | Performs the preorder traversal on the tree.                                                                | List of all node values in preorder manner.    |
+| `postorder()`   | Performs the postorder traversal on the tree.                                                               | List of all node values in postorder manner.   |
+| `levelOrder()`  | Performs the level order traversal (breadth first search) on the tree.                                      | List of all node values in level order manner. |
+| `height()`      | Calculates the height of the tree. Height is the number of edges in the tree from root to the deepest node. | Height of the tree                             |
+| `nodeHeight()`  | Calculates the height of the given node.                                                                    | Height of the node                             |     |
 
 ### Usage
 
@@ -543,7 +543,14 @@ BinarySearch(list, 58); // returns -1;
 Quark-dsa supports different sorting algorithms including the bubble sort, insertion sort, selection sort, mergesort, quicksort and radix sort.
 
 ```js
-import { BubbleSort, InsertionSort, SelectionSort, MergeSort, QuickSort, RadixSort } from "quark-dsa";
+import {
+  BubbleSort,
+  InsertionSort,
+  SelectionSort,
+  MergeSort,
+  QuickSort,
+  RadixSort,
+} from "quark-dsa";
 
 const list = [-2, 45, 0, 11, -9];
 BubbleSort(list); // returns [-9, -2, 0, 11, 45]
