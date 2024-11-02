@@ -14,7 +14,7 @@ npm install quark-dsa
 
 There are several utility functions in quark-dsa, those you can use for performing data structures and operations.
 
-- String: Check if string is palindrome and reverse the string are supported.
+- String:
 
   **Reverse the string**
 
@@ -52,7 +52,7 @@ There are several utility functions in quark-dsa, those you can use for performi
   getWords(str); //returns ["Lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit"]
   ```
 
-- Number: Check if number is palindrome, reverse the number and check if number is prime is supported.
+- Number:
 
   **Reverse the number**
 
@@ -92,7 +92,7 @@ There are several utility functions in quark-dsa, those you can use for performi
 
   **Permutations of the list**
 
-  You can get number of possibilities of selecting k entities out of set of n entities.
+  You can get number of possibilities of selecting k entities out of set of n entities. It will give you the result of `nPk`.
 
   ```js
   import { permutations } from "quark-dsa";
@@ -103,7 +103,7 @@ There are several utility functions in quark-dsa, those you can use for performi
 
   **Combinations of the list**
 
-  You can get number of arrangements of k entities out of set of n entities.
+  You can get number of arrangements of k entities out of set of n entities. It will give you the result of `nCk`
 
   ```js
   import { combinations } from "quark-dsa";
@@ -112,7 +112,7 @@ There are several utility functions in quark-dsa, those you can use for performi
   combinations(12, 2); // returns 66
   ```
 
-- Array: Remove duplicates from an array and calculation of mean, median and mode are supported.
+- Array:
 
   **Mean (Average Calculation)**
 
@@ -204,6 +204,7 @@ There are several utility functions in quark-dsa, those you can use for performi
   ```
 
   **Greatest Common Divisor (GCD) and Least Common Multiples (LCM) of an array**
+
   You can calculate GCD and LCM of an array.
 
   ```js
@@ -216,6 +217,7 @@ There are several utility functions in quark-dsa, those you can use for performi
   ```
 
   **Matrix Operations**
+
   You can also perform matrix operations like addition, subtraction and multiplication on the n\*n arrays.
 
   ```js
@@ -422,7 +424,7 @@ For performing operations on a node in the tree, we need to provide the path of 
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
 | `getRoot()`               | Gets the root of the tree.                                                                                                                                                                                                      | Root node of the tree.                         |
 | `setRootValue(value)`     | Sets the given value to the root node.                                                                                                                                                                                          | void                                           |
-| `insertNode(value, path)` | nserts the value to the given path starting from the root. If the path is an empty string, then it will insert value as a root. Path should be in the form of `L` and `R`. Any characters other than these will throw an error. | Root of the tree                               |
+| `insertNode(value, path)` | Inserts the value to the given path starting from the root. If the path is an empty string, then it will insert value as a root. Path should be in the form of `L` and `R`. Any characters other than these will throw an error. | Root of the tree                               |
 | `inorder()`               | Performs the inorder traversal on the tree.                                                                                                                                                                                     | List of all node values in inorder manner.     |
 | `preorder()`              | Performs the preorder traversal on the tree.                                                                                                                                                                                    | List of all node values in preorder manner.    |
 | `postorder()`             | Performs the postorder traversal on the tree.                                                                                                                                                                                   | List of all node values in postorder manner.   |
@@ -464,6 +466,50 @@ tree.invert(); // Construct the invert (mirror) of the tree.
 tree.inorder(); // Shoud return [9, 31, 7, 13, 5, 3].
 ```
 
+## Binary Search Tree
+
+### Initialize the binary search tree
+
+You can create a binary search tree with the list of node values or insert each node at a time.
+
+```js
+import { BinarySearchTree } from "quark-dsa";
+
+const tree = new BinarySearchTree([8, 3, 10, 6, 1, 4, 14, 7]); // This will create a binary search tree with node 8 as a root.
+const root = tree.getRoot(); // It will return the root of the tree.
+tree.insert(15); // It will insert node with value 15 in the tree.
+```
+
+### Supported methods
+
+| Method                    | Description                                                                                                                                                                                                                     | Returns                                        |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| `getRoot()`               | Gets the root of the tree.                                                                                                                                                                                                      | Root node of the tree.                         |
+| `insert(value)` | Inserts the node with the given value in the binary search tree. | Inserted node of the tree                               |
+| `inorder()`               | Performs the inorder traversal on the tree.                                                                                                                                                                                     | List of all node values in inorder manner.     |
+| `preorder()`              | Performs the preorder traversal on the tree.                                                                                                                                                                                    | List of all node values in preorder manner.    |
+| `postorder()`             | Performs the postorder traversal on the tree.                                                                                                                                                                                   | List of all node values in postorder manner.   |
+| `levelOrder()`            | Performs the level order traversal (breadth first search) on the tree.                                                                                                                                                          | List of all node values in level order manner. |
+| `height()`                | Calculates the height of the tree. Height is the number of edges in the tree from root to the deepest node.                                                                                                                     | Height of the tree                             |
+| `nodeHeight()`            | Calculates the height of the given node.                                                                                                                                                                                        | Height of the node                             |                          |
+
+### Usage
+
+```js
+import { BinarySearchTree } from "quark-dsa";
+
+const tree = new BinarySearchTree([8, 3, 10, 6, 1, 4, 14, 7]); // Constructs a tree with 8 as a root node value.
+tree.inorder(); // Should return [1, 3, 4, 6, 7, 8, 10, 14].
+tree.preorder(); // Should return [8, 3, 1, 6, 4, 7, 10, 14].
+tree.postorder(); // Should return [1, 4, 7, 6, 3, 14, 10, 8].
+tree.insert(13); // Insert 13 in the tree.
+tree.inorder(); // Should return [1, 3, 4, 6, 7, 8, 10, 13, 14].
+tree.preorder(); // Should return [8, 3, 1, 6, 4, 7, 10, 14, 13].
+tree.postorder(); // Should return [1, 4, 7, 6, 3, 13, 14, 10, 8].
+tree.levelOrder(); // Should return [8, 3, 10, 1, 6, 14, 4, 7, 13].
+tree.height(); // Should return 4.
+```
+
 ## Search
 
 Quark-dsa supports Linear Search and Binary Search operations. You can pass the list and search key, it will return the position of the search key in the list.
@@ -490,4 +536,20 @@ import { BinarySearch } from "quark-dsa";
 const list = [2, 10, 12, 15, 20];
 BinarySearch(list, 15); // returns 3;
 BinarySearch(list, 58); // returns -1;
+```
+
+## Sort
+
+Quark-dsa supports different sorting algorithms including the bubble sort, insertion sort, selection sort, mergesort, quicksort and radix sort.
+
+```js
+import { BubbleSort, InsertionSort, SelectionSort, MergeSort, QuickSort, RadixSort } from "quark-dsa";
+
+const list = [-2, 45, 0, 11, -9];
+BubbleSort(list); // returns [-9, -2, 0, 11, 45]
+InsertionSort(list); // returns [-9, -2, 0, 11, 45]
+SelectionSort(list); // returns [-9, -2, 0, 11, 45]
+MergeSort(list); // returns [-9, -2, 0, 11, 45]
+QuickSort(list); // returns [-9, -2, 0, 11, 45]
+RadixSort(list); // returns [-9, -2, 0, 11, 45]
 ```

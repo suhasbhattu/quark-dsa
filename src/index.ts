@@ -12,6 +12,7 @@ import {
   matrixSubtraction,
   matrixMultiplication,
   matrixDeterminant,
+  getSubsets,
 } from "./dataTypes/list";
 import {
   isNumberPalindrome,
@@ -55,6 +56,7 @@ export {
   matrixSubtraction,
   matrixMultiplication,
   matrixDeterminant,
+  getSubsets,
   isNumberPalindrome,
   isPrime,
   reverseNumber,
