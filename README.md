@@ -482,8 +482,8 @@ tree.insert(15); // It will insert node with value 15 in the tree.
 
 ### Supported methods
 
-| Method          | Description                                                                                                 | Returns                                        |
-| --------------- | ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------- | --- |
+| Method                    | Description                                                                                                                                                                                                                      | Returns                                        |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
 | `getRoot()`     | Gets the root of the tree.                                                                                  | Root node of the tree.                         |
 | `insert(value)` | Inserts the node with the given value in the binary search tree.                                            | Inserted node of the tree                      |
 | `inorder()`     | Performs the inorder traversal on the tree.                                                                 | List of all node values in inorder manner.     |
