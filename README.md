@@ -483,7 +483,7 @@ tree.insert(15); // It will insert node with value 15 in the tree.
 ### Supported methods
 
 | Method          | Description                                                                                                 | Returns                                        |
-| --------------- | ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------- | --- |
+| --------------- | ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
 | `getRoot()`     | Gets the root of the tree.                                                                                  | Root node of the tree.                         |
 | `insert(value)` | Inserts the node with the given value in the binary search tree.                                            | Inserted node of the tree                      |
 | `inorder()`     | Performs the inorder traversal on the tree.                                                                 | List of all node values in inorder manner.     |
@@ -491,7 +491,7 @@ tree.insert(15); // It will insert node with value 15 in the tree.
 | `postorder()`   | Performs the postorder traversal on the tree.                                                               | List of all node values in postorder manner.   |
 | `levelOrder()`  | Performs the level order traversal (breadth first search) on the tree.                                      | List of all node values in level order manner. |
 | `height()`      | Calculates the height of the tree. Height is the number of edges in the tree from root to the deepest node. | Height of the tree                             |
-| `nodeHeight()`  | Calculates the height of the given node.                                                                    | Height of the node                             |     |
+| `nodeHeight()`  | Calculates the height of the given node.                                                                    | Height of the node                             |
 
 ### Usage
 
