@@ -332,3 +332,29 @@ export const matrixDeterminant = (matrix: number[][]) => {
     );
   }
 };
+
+/**
+ * Get the list of all subsets for a given list
+ * @param list
+ * @returns The list of all subsets
+ */
+export const getSubsets = (
+  list: (string | number)[],
+): (string | number)[][] => {
+  const calculateSubsets = (
+    list: (string | number)[],
+    result: (number | string)[][],
+    subset: (number | string)[],
+    index: number,
+  ) => {
+    result.push([...subset]);
+    for (let i = index; i < list.length; i++) {
+      subset.push(list[i]);
+      calculateSubsets(list, result, subset, i + 1);
+      subset.pop();
+    }
+  };
+  const result: (number | string)[][] = [];
+  calculateSubsets(list, result, [], 0);
+  return result;
+};

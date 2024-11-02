@@ -22,6 +22,7 @@ import {
   matrixSubtraction,
   matrixMultiplication,
   matrixDeterminant,
+  getSubsets,
   getWords,
 } from "../src/index";
 
@@ -181,6 +182,34 @@ describe("Data Type Module", () => {
         [2, 4, 1],
       ]);
     }).toThrow("Determinant of matrix can be defined only for square matrix.");
+    expect(getSubsets([1, 2, 3])).toStrictEqual([
+      [],
+      [1],
+      [1, 2],
+      [1, 2, 3],
+      [1, 3],
+      [2],
+      [2, 3],
+      [3],
+    ]);
+    expect(getSubsets([1, 2, 3, 4])).toStrictEqual([
+      [],
+      [1],
+      [1, 2],
+      [1, 2, 3],
+      [1, 2, 3, 4],
+      [1, 2, 4],
+      [1, 3],
+      [1, 3, 4],
+      [1, 4],
+      [2],
+      [2, 3],
+      [2, 3, 4],
+      [2, 4],
+      [3],
+      [3, 4],
+      [4],
+    ]);
     expect(
       removeDuplicates([
         "John",
