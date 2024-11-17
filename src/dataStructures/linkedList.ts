@@ -35,11 +35,10 @@ export class LinkedList {
   }
 
   /**
-   * Construct linked list from an array.
-   * @param array The array from which the list is to be constructed.
-   * @returns Head of created linked list.
+   * Construct the linked list from an array.
+   * @param array The array from which the list has to be constructed.
+   * @returns Head of the created linked list.
    */
-
   constructListFromArray(array: any[]) {
     this.head = null;
     let currentNode = null;
@@ -57,10 +56,9 @@ export class LinkedList {
   }
 
   /**
-   * Reverse the given linked list
-   * @returns reversed linked list
+   * Reverse the given linked list.
+   * @returns Head of the reversed linked list.
    */
-
   reverse(): LinkedListNode | null {
     if (this.head) {
       let previous: LinkedListNode | null = null;
@@ -79,9 +77,8 @@ export class LinkedList {
 
   /**
    * Returns node count in the linked list.
-   * @returns Length of linked list
+   * @returns Length of the linked list.
    */
-
   length(): number {
     if (this.head !== null) {
       let length = 0;
@@ -96,11 +93,10 @@ export class LinkedList {
   }
 
   /**
-   * Adds node to the first of linked list
-   * @param value value to be added at first node
-   * @returns Head of linked list
+   * Adds node to the start of the linked list.
+   * @param value value to be added at first node.
+   * @returns Head of the linked list.
    */
-
   addFirst(value: any): LinkedListNode | null {
     const newNode = new LinkedListNode(value);
     newNode.setNext(this.head);
@@ -109,11 +105,10 @@ export class LinkedList {
   }
 
   /**
-   * Appends node to the linked list
-   * @param value value to be added at last node
-   * @returns Head of linked list
+   * Appends node to the linked list.
+   * @param value value to be added at last node.
+   * @returns Head of linked list.
    */
-
   addLast(value: any): LinkedListNode | null {
     const newNode = new LinkedListNode(value);
     let current: LinkedListNode | null = this.head;
@@ -143,8 +138,8 @@ export class LinkedList {
    * Adds the node at a given index. If index is not provided, then it will add node to the last of the linked list.
    * @param value value to be added at a given index
    * @param index index at which node is to be added.
+   * @returns Head of linked list.
    */
-
   add(value: any, index?: number): void {
     if (index != null) {
       if (index === 0) {
@@ -189,8 +184,8 @@ export class LinkedList {
   /**
    * Removes the node at a given index. If index is not provided, it will remove a first node.
    * @param index remove index
+   * @returns Head of linked list.
    */
-
   remove(index?: number): void {
     if (index != null) {
       if (index < 0 || index > this.length()) {
@@ -210,7 +205,7 @@ export class LinkedList {
   /**
    * Gets the value of node at a given index.
    * @param index index
-   * @returns Value of node at given index
+   * @returns Value of node at given index.
    */
   getValue(index: number): any {
     if (this.head) {
@@ -227,11 +222,10 @@ export class LinkedList {
 
   /**
    * Update the value of node at a given index.
-   * @param newValue New updated value
-   * @param index update index
-   * @returns Head of a linked list
+   * @param newValue New updated value.
+   * @param index update index.
+   * @returns Head of a linked list.
    */
-
   update(newValue: any, index: number) {
     if (this.head !== null) {
       let currentIndex = 0;
@@ -260,9 +254,8 @@ export class LinkedList {
 
   /**
    * Return middle node.
-   * @returns The middle node of a given list. If linked list has even number of nodes, it will return a node having index (length / 2) + 1.
+   * @returns The middle node of a given list. If linked list has even node count, it will return a node having index (length / 2) + 1.
    */
-
   getMiddleNode(): LinkedListNode | null {
     if (this.head !== null) {
       let slow: LinkedListNode | null = this.head;
@@ -270,7 +263,7 @@ export class LinkedList {
       while (fast?.getNext()) {
         slow = slow !== null ? slow.getNext() : slow;
         if (fast.getNext() !== null) {
-          const next = fast.getNext();
+          const next: any = fast.getNext();
           if (next !== null) {
             fast = next.getNext();
           }
@@ -283,9 +276,8 @@ export class LinkedList {
 
   /**
    * Return middle node value.
-   * @returns The middle node value of a given list. If linked list has even number of nodes, it will return a node having index (length / 2) + 1.
+   * @returns The middle node value of a given list. If linked list has even node count, it will return a node having index (length / 2) + 1.
    */
-
   getMiddleValue(): any {
     if (this.head !== null) {
       const node = this.getMiddleNode();
@@ -318,7 +310,6 @@ export class LinkedList {
    * @param pos Number of position by which the linked list to be rotated. If position is not there, it will rotate it by 1.
    * @returns Head of linked list.
    */
-
   rotateRight(pos?: number): LinkedListNode | null {
     if (this.head !== null) {
       const length = this.length();
@@ -339,7 +330,6 @@ export class LinkedList {
    * @param pos Number of position by which the linked list to be rotated. If position is not there, it will rotate it by 1.
    * @returns Head of linked list.
    */
-
   rotateLeft(pos?: number): LinkedListNode | null {
     if (this.head !== null) {
       const length = this.length();

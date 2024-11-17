@@ -3,12 +3,26 @@ import { MergeSort } from "../algorithms/sorting";
 type MeanType = "arithmetic" | "geometric" | "harmonic" | "rms";
 
 /**
+ * Calculates the product of all items in the list.
+ * @param list list of numbers;
+ * @returns the product of the list.
+ */
+export const product = (list: number[]): number => {
+  let product = 1;
+  for (const item of list) {
+    product *= item;
+  }
+  if (product !== 0) return product;
+  else if (product.toLocaleString()[0] === "-") return 0;
+  else return 0;
+};
+
+/**
  * Calculates the mean of the list.
  * @param list list of the numbers.
- * @param type type of the mean, supported types are "arithmetic", "geometric", "harmonic" and "rms(root mean square)". Default value is arithmetic if not provided.
- * @returns
+ * @param type type of the mean, supported types are "arithmetic", "geometric", "harmonic" and "rms(root-mean-square)". Default value is "arithmetic" if not provided.
+ * @returns the mean of the list.
  */
-
 export const mean = (list: number[], type?: MeanType): number => {
   let meanValue = 0;
   const length = list.length;
@@ -45,7 +59,6 @@ export const mean = (list: number[], type?: MeanType): number => {
  * @param list list of numbers.
  * @returns median of the list.
  */
-
 export const median = (list: number[]): number => {
   MergeSort(list);
   let medianValue = 0;
@@ -64,7 +77,6 @@ export const median = (list: number[]): number => {
  * @param list list of numbers
  * @returns mode of the list. If multiple numbers have the same highest frequency, it will return array of mode values.
  */
-
 export const mode = (list: number[]): number | number[] => {
   let modeValue = [];
   const freq: any = {};
@@ -84,6 +96,18 @@ export const mode = (list: number[]): number | number[] => {
   return modeValue.length === 1
     ? Number(modeValue[0][0])
     : modeValue.map((a) => Number(a[0]));
+};
+
+/**
+ * Calculate the RMS(Root Mean Square) of the list.
+ * @param list
+ * @returns RMS(Root Mean Square) value of the list.
+ */
+export const rootMeanSquare = (list: number[]): number => {
+  const square = list.reduce((prev, curr) => prev + curr * curr, 0);
+  const mean = square / list.length;
+  const root = Math.sqrt(mean);
+  return Math.round(root * 100) / 100;
 };
 
 /**
@@ -108,11 +132,10 @@ export const standardDeviation = (list: number[]): number => {
 };
 
 /**
- * This will remove duplicates from the passed argument list and return the same list.
- * @param list List of numbers or strings
- * @returns same list with duplicates removed
+ * This will remove duplicates from the list and return the same list.
+ * @param list List of numbers or strings.
+ * @returns Same list with duplicates removed.
  */
-
 export const removeDuplicates = (
   list: (number | string)[],
 ): (number | string)[] => {
@@ -137,7 +160,7 @@ interface histogramMap {
 }
 /**
  * Returns the histogram map for each item occurrence in a given list.
- * @param list
+ * @param list List of numbers or strings.
  * @returns Histogram map for a given list.
  */
 export const histogram = (list: (number | string)[]): histogramMap => {
@@ -153,11 +176,10 @@ export const histogram = (list: (number | string)[]): histogramMap => {
 };
 
 /**
- * This will calculate the Greatest Common Divisor (GCD) of the list and return it.
+ * Returns the Greatest Common Divisor (GCD) of the list.
  * @param list List of numbers
- * @returns Greatest Common Divisor (GCD) of the list
+ * @returns Greatest Common Divisor (GCD) of the list.
  */
-
 export const gcd = (list: number[]): number => {
   if (list.length === 0) {
     return 0;
@@ -178,11 +200,10 @@ export const gcd = (list: number[]): number => {
 };
 
 /**
- * This will calculate the Least Common Multiple (LCM) of the list and return it.
- * @param list List of numbers
+ * Returns the Least Common Multiple (LCM) of the list.
+ * @param list List of numbers.
  * @returns Least Common Multiple (LCM) of the list
  */
-
 export const lcm = (list: number[]): number => {
   if (list.length === 0) {
     return 0;
@@ -197,18 +218,18 @@ export const lcm = (list: number[]): number => {
 /**
  * This will add two matrices and will return the result.
  * @param matrix1 First matrix
- * @param matrix2 Second martix
- * @returns Addition of two metrices.
+ * @param matrix2 Second matrix
+ * @returns Addition of two matrices.
  */
-
 export const matrixAddition = (
   matrix1: number[][],
   matrix2: number[][],
 ): number[][] => {
-  const m1 = matrix1.length,
-    n1 = matrix1[0].length;
-  const m2 = matrix2.length,
-    n2 = matrix2[0].length;
+  const m1 = matrix1.length;
+  const n1 = matrix1[0].length;
+  const m2 = matrix2.length;
+  const n2 = matrix2[0].length;
+
   if (m1 === m2 && n1 === n2) {
     const result = new Array(m1);
     for (let index = 0; index < m1; index++) {
@@ -225,19 +246,19 @@ export const matrixAddition = (
 
 /**
  * This will subtract second matrix from first and will return the result.
- * @param matrix1 First matrix
- * @param matrix2 Second martix
- * @returns Subtract of two metrices.
+ * @param matrix1 First matrix.
+ * @param matrix2 Second matrix.
+ * @returns Subtract of two matrices.
  */
-
 export const matrixSubtraction = (
   matrix1: number[][],
   matrix2: number[][],
 ): number[][] => {
-  const m1 = matrix1.length,
-    n1 = matrix1[0].length;
-  const m2 = matrix2.length,
-    n2 = matrix2[0].length;
+  const m1 = matrix1.length;
+  const n1 = matrix1[0].length;
+  const m2 = matrix2.length;
+  const n2 = matrix2[0].length;
+
   if (m1 === m2 && n1 === n2) {
     const result = new Array(m1);
     for (let index = 0; index < m1; index++) {
@@ -255,18 +276,18 @@ export const matrixSubtraction = (
 /**
  * This will multiply both matrices and will return the result.
  * @param matrix1 First matrix
- * @param matrix2 Second martix
- * @returns Multiplication of two metrices.
+ * @param matrix2 Second matrix
+ * @returns Multiplication of two matrices.
  */
-
 export const matrixMultiplication = (
   matrix1: number[][],
   matrix2: number[][],
 ): number[][] => {
-  const m1 = matrix1.length,
-    n1 = matrix1[0].length;
-  const m2 = matrix2.length,
-    n2 = matrix2[0].length;
+  const m1 = matrix1.length;
+  const n1 = matrix1[0].length;
+  const m2 = matrix2.length;
+  const n2 = matrix2[0].length;
+
   if (n1 === m2) {
     const result = new Array(m1);
     for (let index = 0; index < m1; index++) {
@@ -288,13 +309,14 @@ export const matrixMultiplication = (
 };
 
 /**
- * This will return determinant of the matrix.
+ * This will return the determinant of the given matrix.
  * @param matrix
- * @returns determinant of matrix.
+ * @returns Determinant of the matrix.
  */
 export const matrixDeterminant = (matrix: number[][]) => {
-  const m = matrix.length,
-    n = matrix[0].length;
+  const m = matrix.length;
+  const n = matrix[0].length;
+
   if (m === n) {
     const determinant = (mat: number[][], k: number) => {
       let det = 0;
@@ -334,7 +356,7 @@ export const matrixDeterminant = (matrix: number[][]) => {
 };
 
 /**
- * Get the list of all subsets for a given list
+ * Returns the list of all subsets for a given list
  * @param list
  * @returns The list of all subsets
  */

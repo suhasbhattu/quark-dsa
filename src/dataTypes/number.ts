@@ -21,11 +21,10 @@ export const reverseNumber = (number: number): number => {
 };
 
 /**
- * Check if number is prime.
+ * Check if the number is prime.
  * @param number
- * @returns true if number is prime, otherwise false.
+ * @returns true if the number is prime, otherwise false.
  */
-
 export const isPrime = (number: number): boolean => {
   if (number === 1 || number < 0) {
     return false;
@@ -44,9 +43,9 @@ export const isPrime = (number: number): boolean => {
 };
 
 /**
- * Check if number is palindrome.
+ * Check if the number is palindrome.
  * @param number
- * @returns true if number is palindrome, otherwise false.
+ * @returns true if the number is palindrome, otherwise false.
  */
 export const isNumberPalindrome = (number: number): boolean => {
   if (number < 0) {

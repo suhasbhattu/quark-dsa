@@ -54,6 +54,6 @@ export const getWords = (string: string): string[] => {
   if (string.length === 0) {
     return [];
   }
-  const matches = string.match(/\b[^\s]+\b/g);
+  const matches = string.match(/\b\S+\b/g);
   return matches ?? [];
 };

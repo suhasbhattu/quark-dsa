@@ -9,9 +9,11 @@ import {
   isStringPalindrome,
   reverseString,
   sortString,
+  product,
   mean,
   median,
   mode,
+  rootMeanSquare,
   variance,
   standardDeviation,
   removeDuplicates,
@@ -27,7 +29,11 @@ import {
 } from "../src/index";
 
 describe("Data Type Module", () => {
-  test("Mean Array", () => {
+  test("List Operations", () => {
+    expect(product([2, 3, 6, 34, 90, 1])).toBe(110160);
+    expect(product([-34, -90, 45, 9, -3])).toBe(-3717900);
+    expect(product([90, 87, 0, -34, -900, -1245])).toBe(0);
+    expect(product([90, 87, 0, -34, 900, -1245])).toBe(0);
     expect(mean([3, 5, 9, 5, 7, 2])).toBe(5.17);
     expect(mean([2, 6, 4, 5, 8])).toBe(5);
     expect(mean([4, 10, 16, 24], "geometric")).toBe(11.13);
@@ -43,6 +49,8 @@ describe("Data Type Module", () => {
     expect(median([142, 140, 130, 150, 160, 135, 158, 132])).toBe(141);
     expect(mode([3, 3, 6, 9, 16, 16, 16, 27, 27, 37, 48])).toBe(16);
     expect(mode([3, 3, 3, 9, 16, 16, 16, 27, 37, 48])).toStrictEqual([3, 16]);
+    expect(rootMeanSquare([1, 2, 3, 4, 5])).toBe(3.32);
+    expect(rootMeanSquare([4, 6, 8, 10])).toBe(7.35);
     expect(variance([46, 69, 32, 60, 52, 41])).toBe(177.2);
     expect(variance([4, 2, 5, 8, 6])).toBe(5);
     expect(standardDeviation([46, 69, 32, 60, 52, 41])).toBe(13.31);
