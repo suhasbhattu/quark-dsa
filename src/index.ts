@@ -1,7 +1,9 @@
 import {
+  product,
   mean,
   median,
   mode,
+  rootMeanSquare,
   variance,
   standardDeviation,
   removeDuplicates,
@@ -44,9 +46,11 @@ import {
 } from "./algorithms/sorting";
 
 export {
+  product,
   mean,
   median,
   mode,
+  rootMeanSquare,
   variance,
   standardDeviation,
   removeDuplicates,

@@ -1,6 +1,6 @@
 export class Stack {
-  private array: any[];
-  private size: number;
+  private readonly array: any[];
+  private readonly size: number;
   private top: number;
 
   constructor(size?: number) {
@@ -12,6 +12,10 @@ export class Stack {
     this.top = -1;
   }
 
+  /**
+   * Pushes new item in the stack.
+   * @param item
+   */
   push(item: any): void {
     if (this.top === this.size - 1) {
       throw new Error("Stack is full, cannot be pushed new items.");
@@ -21,6 +25,10 @@ export class Stack {
     }
   }
 
+  /**
+   * Pops the top elements from the stack.
+   * @returns The popped item.
+   */
   pop(): any {
     if (this.isEmpty()) {
       throw new Error("Stack is empty, no items can be popped.");
@@ -32,18 +40,35 @@ export class Stack {
     }
   }
 
+  /**
+   * Check if the stack is empty.
+   * @returns true if the stack is empty, otherwise false.
+   */
   isEmpty(): boolean {
     return this.top === -1;
   }
 
+  /**
+   * Returns the top item in the stack.
+   * @returns The top item in the stack.
+   */
   peek(): any {
     return this.array[this.top];
   }
 
+  /**
+   * Returns the length of the stack.
+   * @returns the length of the stack.
+   */
   length(): number {
     return this.top + 1;
   }
 
+  /**
+   * Checks for an item in a stack and returns its index.
+   * @param item
+   * @returns The index of matched item. If not matched, it will return -1.
+   */
   search(item: any): number {
     let position = -1;
     let i = 0;

@@ -113,6 +113,17 @@ There are several utility functions in quark-dsa, those you can use for performi
   ```
 
 - Array:
+  
+  **Product**
+  
+  You can calculate the product of all the items in the list.
+  
+  ```js
+  import { product } from "quark-dsa";
+
+  product([2, 3, 6, 34, 90, 1]; // returns 110160
+  product([90, 87, 0, -34, -900, -1245]); // returns 0
+  ```
 
   **Mean (Average Calculation)**
 
@@ -154,9 +165,22 @@ There are several utility functions in quark-dsa, those you can use for performi
   mode(list2); // returns [3, 16]
   ```
 
-  **Variance and Standard Variation**
+  **Root Mean Square (RMS)**
 
-  You can also calculate Variance and Standard Variation of the list.
+  You can calculate the Root Mean Square (RMS) of the list.
+
+  ```js
+  import { rootMeanSquare } from "quark-dsa";
+
+  let list = [1, 2, 3, 4, 5];
+  rootMeanSquare(list); // returns 3.32
+  let list2 = [4, 6, 8, 10];
+  rootMeanSquare(list2); // returns 7.35
+  ```
+
+  **Variance and Standard Deviation**
+
+  You can also calculate Variance and Standard Deviation of the list.
 
   ```js
   import { variance, standardDeviation } from "quark-dsa";
